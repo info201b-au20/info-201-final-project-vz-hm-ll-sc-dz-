@@ -2,7 +2,7 @@
 Use this `REAMDE.md` file to describe your final project (as detailed on Canvas).
 
 ## Domain of interest
-As we've discussed, data science can expose underlying patterns in any domain that uses or collects data (which is nearly any domain). Anything from the forced relocation of homeless individuals  (Links to an external site.)  to how people gender representation  (Links to an external site.)  in the media, data can expose interesting (and actionable) patterns. In this section, you'll identify a domain that you are interested in (e.g., music, education, dance, immigration -- any field of your interest) and answer the following questions in your `README.md` file:
+As we've discussed, data science can expose underlying patterns in any domain that uses or collects data (which is nearly any domain). Anything from the [forced relocation of homeless individuals](https://www.theguardian.com/us-news/ng-interactive/2017/dec/20/bussed-out-america-moves-homeless-people-country-study) to how people [gender representation](https://pudding.cool/2017/09/this-american-life/) in the media, data can expose interesting (and actionable) patterns. In this section, you'll identify a domain that you are interested in (e.g., music, education, dance, immigration -- any field of your interest) and answer the following questions in your `README.md` file:
 
 
 _Why are you interested in this field/domain?_ <br>
