@@ -9,9 +9,9 @@ _Why are you interested in this field/domain?_ <br>
 We’re interested in this field because we think the data is relevant to the current movements and protests going on today, as well as how some people are handling the pandemic. The Human Fredom Index have indicators that are based on crime and violence, freedom of movement, and legal discrimination against same-sex relationships, which we think have been recent large topics of debate in the recent years.  Through all the protests and controversy,  we want to see how these freedom indexes have changed over time, as well as what countries have been progressive enough for these indexes to increase.
 
 _What other examples of data driven projects have you found related to this domain (share at least 3)?_ <br>
-[Example 1](https://www.atlasnetwork.org/news/article/the-human-freedom-index-provides-a-snapshot-of-global-liberty) <br>
-[Example 2](https://www.fraserinstitute.org/studies/human-freedom-index-2019) <br>
-[Example 3](https://www.cato.org/sites/cato.org/files/human-freedom-index-files/human-freedom-index-2015.pdf)
+[THE HUMAN FREEDOM INDEX PROVIDES A SNAPSHOT OF GLOBAL LIBERTY](https://www.atlasnetwork.org/news/article/the-human-freedom-index-provides-a-snapshot-of-global-liberty) <br>
+[The Human Freedom Index 2019](https://www.fraserinstitute.org/studies/human-freedom-index-2019) <br>
+[The Human Freedom Index: A Global Measurement of Personal, Civil, and Economic Freedom](https://www.cato.org/sites/cato.org/files/human-freedom-index-files/human-freedom-index-2015.pdf)
 
 _What data-driven questions do you hope to answer about this domain (share at least 3)?_ <br>
 - Does the size of government affect freedom?
@@ -36,7 +36,7 @@ _How was the data collected or generated? Make sure to explain who collected the
 - The third dataset is co-published by the Cato Institute, the Fraser Institute, and the Friedrich Naumann Foundation for Freedom.
 
 _How many observations (rows) are in your data?_
-- Link 1:  159
+- Link 1: 159
 - Link 2: 154
 - Link 3: 162
 
