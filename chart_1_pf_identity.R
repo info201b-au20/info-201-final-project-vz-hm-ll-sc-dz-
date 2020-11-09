@@ -28,8 +28,10 @@ pf_identity_summary_by_region <- pf_identity_data %>%
 
 region <- pf_identity_summary_by_region$region
 pf_identity_legal <- pf_identity_summary_by_region$pf_identity_legal_by_region
-pf_identity_sex_female <- pf_identity_summary_by_region$pf_identity_sex_female_by_region
-pf_identity_sex_male <- pf_identity_summary_by_region$pf_identity_sex_male_by_region
+pf_identity_sex_female <-
+  pf_identity_summary_by_region$pf_identity_sex_female_by_region
+pf_identity_sex_male <-
+  pf_identity_summary_by_region$pf_identity_sex_male_by_region
 pf_identity_divorce <-
   pf_identity_summary_by_region$pf_identity_identity_divorce_by_region
 df <- data.frame(region,
