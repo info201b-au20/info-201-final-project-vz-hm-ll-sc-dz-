@@ -46,7 +46,7 @@ This graph demonstrates the differences in personal freedoms across geographic r
 
 ```{r chart2, echo=FALSE}
 par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
-mapParams <- mapCountryData(joined, catMethod ='fixedWidth',  nameColumnToPlot="hf_score", missingCountryCol = 'grey', addLegend = FALSE, mapTitle='Freedom Index by Country - 2017')
+map_params <- mapCountryData(joined, catMethod ='fixedWidth',  nameColumnToPlot="hf_score", missingCountryCol = 'grey', addLegend = FALSE, mapTitle='Freedom Index by Country - 2017')
 map <- do.call( addMapLegend, c(mapParams, legendWidth=0.5, legendMar = 2))
 ```
 
