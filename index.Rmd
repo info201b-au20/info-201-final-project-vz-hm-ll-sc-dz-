@@ -87,7 +87,7 @@ between men are legal.
 From the chart above, we could observe that regions like Sub-Saharan Africa, South Asia, and Middle East & North Africa, which mainly consist of countries that are considered less "developed", exhibit significantly lower mean index for three or more of the categories considered.
 <br>
 <br>
-
+This graph demonstrates the differences in personal freedoms across geographic regions.
 
 ```{r chart2, echo=FALSE}
 par(mai = c(0, 0, 0.2, 0), xaxs = "i", yaxs = "i")
