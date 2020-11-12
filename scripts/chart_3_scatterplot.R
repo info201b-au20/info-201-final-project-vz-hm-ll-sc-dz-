@@ -28,7 +28,7 @@ total_data_2017$pf_score <- as.numeric(as.character(total_data_2017$pf_score))
 
 ggplot(data = total_data_2017) +
   geom_point(
-    mapping = aes(x = pf_score, y = ef_score, color = region)
+    mapping = aes(x = pf_score, y = ef_score, color = region), size = 2.5
     ) +
     scale_color_brewer(palette = "Set3") +
   scale_x_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
@@ -37,6 +37,10 @@ ggplot(data = total_data_2017) +
     title = paste("Personal and Economic Freedom 2017"),
     x = "Personal Freedom",
     y = "Economic Freedom")
+
+ggsave(filename = "pf and ef scatterplot.png",
+       device = "png",
+       width = 15)
 
 #ggplot(data = total_data) +
 #  geom_point(
