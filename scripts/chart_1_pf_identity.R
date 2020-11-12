@@ -1,6 +1,9 @@
 library(tidyverse)
 
-hfi <- read.csv("hfi_cc_2019 copy.csv", header = TRUE, stringsAsFactors = FALSE)
+setwd(getwd())
+hfi <- read.csv("scripts/hfi_cc_2019_copy.csv",
+                header = TRUE,
+                stringsAsFactors = FALSE)
 
 # pf = personal freedom
 pf_identity_data <- hfi %>%

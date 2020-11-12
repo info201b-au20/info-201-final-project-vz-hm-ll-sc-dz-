@@ -2,7 +2,9 @@ library(tidyverse)
 library(rworldmap)
 
 # import human freedom index data
-hfi <- read.csv("hfi_cc_2019 copy.csv", header = TRUE, stringsAsFactors = FALSE)
+hfi <- read.csv("scripts/hfi_cc_2019_copy.csv",
+                header = TRUE,
+                stringsAsFactors = FALSE)
 
 # take only the most current data
 current <- hfi %>%
@@ -30,4 +32,4 @@ map_params <- mapCountryData(joined,
                             missingCountryCol = "grey",
                             addLegend = FALSE,
                             mapTitle = "Freedom Index by Country - 2017")
-map <- do.call(addMapLegend, c(mapParams, legendWidth = 0.5, legendMar = 2))
+map <- do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
