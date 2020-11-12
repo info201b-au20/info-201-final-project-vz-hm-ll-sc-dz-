@@ -15,7 +15,8 @@ Here, we look to investigate what factors shape human freedom across the world. 
 The data comes from the Cato Institute, the Fraser Institute, and the Liberales Institut at the Friedrich Naumann Foundation for Freedom.
 
 ## Summary
-The country with the highest human freedom idex (HFI) was [] and the country with the lowest HFI was []. 
+The country with the highest human freedom idex (HFI) was ["New Zealand"] and the country with the lowest HFI was ["Syria"]. As for the average human freedom across different regions, North America ranks the highest, followed by Western Europe, East Asia, Oceania, 
+Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia, South Asia, Sub-Saharan Africa, while Middle East & North Africa ranks the lowest. 
 
 ## Table 
 
