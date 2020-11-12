@@ -4,9 +4,9 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-source("scripts/chart_1_pf_identity.R")
-source("scripts/chart_2_world.R")
-source("scripts/chart_3_scatterplot.R")
+source("./scripts/chart_1_pf_identity.R")
+source("./scripts/chart_2_world.R")
+source("./scripts/chart_3_scatterplot.R")
 ```
 
 ## Introduction
@@ -23,16 +23,11 @@ Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia, South As
 ## Visualizations
 
 ```{r chart1, include=FALSE}
-ggplot(data = df_long, aes(x = region, y = mean_index, fill = legend)) +
-  geom_col(position = position_dodge()) +
-  labs(title =
-         "Personal Freedom: Identity and Relationships in 2017 (By Region)") +
-  labs(x = "Region") +
-  labs(y = "Mean Index") +
-  labs(fill = "Legend")
+plot(chart1)
 ```
 
-_Explanations for Legend Labels:_ <br>
+_Explanations for Legend Labels:_
+<br>
 `pf_identity_divorce` measures whether women and men **1)** have the same legal
 rights to initiate divorce and **2)** have the same requirements for divorce.
 <br>
@@ -44,6 +39,7 @@ between women are legal.
 <br>
 `pf_identity_sex_male` measures the extent to which sexual relationships
 between men are legal.
+<br>
 
 This graph demonstrates the differences in personal freedoms across geographic regions. 
 

@@ -1,6 +1,6 @@
 library(tidyverse)
 
-hfi <- read.csv("hfi_cc_2019 copy.csv")
+hfi <- read.csv("hfi_cc_2019 copy.csv", header = TRUE, stringsAsFactors = FALSE)
 
 # pf = personal freedom
 pf_identity_data <- hfi %>%
@@ -42,7 +42,8 @@ df <- data.frame(region,
                  pf_identity_divorce)
 df_long <- gather(df, legend, mean_index, -region)
 
-ggplot(data = df_long, aes(x = region, y = mean_index, fill = legend)) +
+chart1 <-
+  ggplot(data = df_long, aes(x = region, y = mean_index, fill = legend)) +
   geom_col(position = position_dodge()) +
   labs(title =
          "Personal Freedom: Identity and Relationships in 2017 (By Region)") +
