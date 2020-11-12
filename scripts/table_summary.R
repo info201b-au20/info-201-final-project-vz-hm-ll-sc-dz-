@@ -1,9 +1,10 @@
 library(dplyr)
 library(tidyverse)
 
-hfi <- read.csv("../hfi_cc_2019.csv", stringsAsFactors = FALSE)
+# hfi <- read.csv("../hfi_cc_2019.csv", stringsAsFactors = FALSE)
 # it is sometime harder to include all the countries than the regions (being smaller in amount)
 # in data visualization to show trends, so my main focus here on the summary table would be on the countries.
+hfi <- read.csv("scripts/hfi_cc_2019_copy.csv", stringsAsFactors = FALSE)
 
 hfi$hf_score[hfi$hf_score == "-"] <- "0" 
 hfi$pf_score[hfi$pf_score == "-"] <- "0" 
@@ -53,9 +54,9 @@ ef_pf <- hfi %>%
   group_by(countries) %>%
   mutate(ef_pf_corr = as.numeric(pf_score) / as.numeric(ef_score))
 
-unique(ef_pf$region[ef_pf$ef_pf_corr >= 1])
+per_over_eco <- unique(ef_pf$region[ef_pf$ef_pf_corr >= 1])
 
-unique(ef_pf$region[ef_pf$ef_pf_corr < 1])
+eco_over_per <- unique(ef_pf$region[ef_pf$ef_pf_corr < 1])
 
 # Result: In general, Western Europe & North America countries have higher personal freedom scores,
 # with some of the lowest economic freedom scores while the others are included in both cases.

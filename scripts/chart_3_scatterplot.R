@@ -1,7 +1,7 @@
 library(tidyverse)
 library(RColorBrewer)
 
-hfi_2019_data <- read.csv("../hfi_cc_2019.csv")
+hfi_2019_data <- read.csv("scripts/hfi_cc_2019_copy.csv")
 
 #pf = personal freedom
 pf_data <- hfi_2019_data %>%
@@ -26,7 +26,7 @@ total_data_2017$ef_score <- as.numeric(as.character(total_data_2017$ef_score))
 total_data_2017$pf_score <- as.numeric(as.character(total_data_2017$pf_score))
 
 
-ggplot(data = total_data_2017) +
+chart3 <- ggplot(data = total_data_2017) +
   geom_point(
     mapping = aes(x = pf_score, y = ef_score, color = region), size = 2.5
     ) +
@@ -41,13 +41,3 @@ ggplot(data = total_data_2017) +
 ggsave(filename = "pf and ef scatterplot.png",
        device = "png",
        width = 15)
-
-#ggplot(data = total_data) +
-#  geom_point(
-#    mapping = aes(x = pf_score, y = ef_score, color = region)
-#  ) +
-#  scale_color_brewer(palette = "Set3") + facet_wrap(~year) +
-#  labs(
-#    title = paste("Personal and Economic Freedom"),
-#    x = "Personal Freedom",
-#    y = "Economic Freedom")
