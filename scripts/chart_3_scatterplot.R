@@ -22,15 +22,21 @@ total_data <- pf_data_by_region %>%
 total_data_2017 <- total_data %>%
   filter(year == max(year))
 
+total_data_2017$ef_score <- as.numeric(as.character(total_data_2017$ef_score))
+total_data_2017$pf_score <- as.numeric(as.character(total_data_2017$pf_score))
+
+
 ggplot(data = total_data_2017) +
   geom_point(
     mapping = aes(x = pf_score, y = ef_score, color = region)
     ) +
     scale_color_brewer(palette = "Set3") +
-    labs(
-      title = paste("Personal and Economic Freedom 2017"),
-      x = "Personal Freedom",
-      y = "Economic Freedom")
+  scale_x_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
+  scale_y_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
+  labs(
+    title = paste("Personal and Economic Freedom 2017"),
+    x = "Personal Freedom",
+    y = "Economic Freedom")
 
 #ggplot(data = total_data) +
 #  geom_point(
