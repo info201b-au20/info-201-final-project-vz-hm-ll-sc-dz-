@@ -41,13 +41,3 @@ chart3 <- ggplot(data = total_data_2017) +
 ggsave(filename = "pf and ef scatterplot.png",
        device = "png",
        width = 15)
-
-#ggplot(data = total_data) +
-#  geom_point(
-#    mapping = aes(x = pf_score, y = ef_score, color = region)
-#  ) +
-#  scale_color_brewer(palette = "Set3") + facet_wrap(~year) +
-#  labs(
-#    title = paste("Personal and Economic Freedom"),
-#    x = "Personal Freedom",
-#    y = "Economic Freedom")

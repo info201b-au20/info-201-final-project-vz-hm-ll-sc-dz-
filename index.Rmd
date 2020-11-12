@@ -60,13 +60,13 @@ In terms of the Women-Specific Personal Freedom Indicator across the region on a
 Above all, every table of interest present a possible direction to do more exploration on this data.
 
 ## Visualizations
-
-This chart demonstrates the differences in personal freedoms in establishing one’s own identity and to have intimate and familial relationships with others across different
-regions.
-
+<br>
 ```{r chart1, echo=FALSE}
 chart1
 ```
+
+This chart demonstrates the differences in personal freedoms in establishing one’s own identity and to have intimate and familial relationships with others across different
+regions.
 
 Each of the **Legend** labels represents a specific index in personal freedom regarding one's identity and relationships. The explanations for these labels are as follows:
 <br>
@@ -88,8 +88,6 @@ From the chart above, we could observe that regions like Sub-Saharan Africa, Sou
 <br>
 <br>
 
-This graph demonstrates the differences in personal freedoms across geographic
-regions. 
 
 ```{r chart2, echo=FALSE}
 par(mai = c(0, 0, 0.2, 0), xaxs = "i", yaxs = "i")
@@ -110,3 +108,5 @@ This plot shows a geographical representation of the freedom index values across
 ```{r chart3, echo=FALSE}
 chart3
 ```
+
+This plot shows the relationship of personal and economic freedom in 2017. They're color coded by region. Middle East & North Africa have the lowest personal and economic freedoms, and Africa as a whole is the region with the most widespread freedoms. Clumped heavily at the top of the scatter-plot is Western Europe, where personal and economic freedoms are the highest.
