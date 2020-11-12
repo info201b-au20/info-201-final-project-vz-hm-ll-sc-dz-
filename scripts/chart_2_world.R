@@ -1,10 +1,12 @@
 library(tidyverse)
 library(rworldmap)
+library(RColorBrewer)
 
 # import human freedom index data
 hfi <- read.csv("scripts/hfi_cc_2019_copy.csv",
-                header = TRUE,
-                stringsAsFactors = FALSE)
+  header = TRUE,
+  stringsAsFactors = FALSE
+)
 
 # take only the most current data
 current <- hfi %>%
@@ -26,10 +28,12 @@ joined <- joinCountryData2Map(current,
 
 # plot data
 par(mai = c(0, 0, 0.2, 0), xaxs = "i", yaxs = "i")
+colour_palette <- RColorBrewer::brewer.pal(7, "YlGnBu")
 map_params <- mapCountryData(joined,
-                            catMethod = "fixedWidth",
-                            nameColumnToPlot = "hf_score",
-                            missingCountryCol = "grey",
-                            addLegend = FALSE,
-                            mapTitle = "Freedom Index by Country - 2017")
-map <- do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
+  catMethod = "fixedWidth",
+  nameColumnToPlot = "hf_score",
+  missingCountryCol = "white",
+  addLegend = FALSE,
+  mapTitle = "Freedom Index by Country - 2017",
+  colourPalette = colour_palette)
+do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))

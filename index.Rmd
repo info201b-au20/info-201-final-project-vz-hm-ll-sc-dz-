@@ -90,18 +90,17 @@ From the chart above, we could observe that regions like Sub-Saharan Africa, Sou
 This graph demonstrates the differences in personal freedoms across geographic regions.
 
 ```{r chart2, echo=FALSE}
-par(mai = c(0, 0, 0.2, 0), xaxs = "i", yaxs = "i")
 map_params <- mapCountryData(joined,
   catMethod = "fixedWidth",
   nameColumnToPlot = "hf_score",
-  missingCountryCol = "grey",
+  missingCountryCol = "white",
   addLegend = FALSE,
-  mapTitle = "Freedom Index by Country - 2017"
-)
-map <- do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
+  mapTitle = "Freedom Index by Country - 2017",
+  colourPalette = colour_palette)
+do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
 ```
 
-This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and red indicates a higher level of freedom. The grey represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom. 
+This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and blue indicates a higher level of freedom. The white represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom.
 <br>
 <br>
 
