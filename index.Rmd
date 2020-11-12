@@ -61,11 +61,15 @@ Above all, every table of interest present a possible direction to do more explo
 
 ## Visualizations
 
+This chart demonstrates the differences in personal freedoms in establishing one’s own identity and to have intimate and familial relationships with others across different
+regions.
+
 ```{r chart1, echo=FALSE}
 chart1
 ```
 
-_Explanations for_ **Legend** _Labels:_
+Each of the **Legend** labels represents a specific index in personal freedom regarding one's identity and relationships. The explanations for these labels are as follows:
+<br>
 <br>
 `pf_identity_divorce` measures whether women and men **1)** have the same legal
 rights to initiate divorce and **2)** have the same requirements for divorce.
@@ -79,17 +83,29 @@ between women are legal.
 `pf_identity_sex_male` measures the extent to which sexual relationships
 between men are legal.
 <br>
+<br>
+From the chart above, we could observe that regions like Sub-Saharan Africa, South Asia, and Middle East & North Africa, which mainly consist of countries that are considered less "developed", exhibit significantly lower mean index for three or more of the categories considered.
+<br>
+<br>
 
-This graph demonstrates the differences in personal freedoms across geographic regions. 
-
+This graph demonstrates the differences in personal freedoms across geographic
+regions. 
 
 ```{r chart2, echo=FALSE}
-par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
-map_params <- mapCountryData(joined, catMethod ='fixedWidth',  nameColumnToPlot="hf_score", missingCountryCol = 'grey', addLegend = FALSE, mapTitle='Freedom Index by Country - 2017')
-map <- do.call( addMapLegend, c(map_params, legendWidth=0.5, legendMar = 2))
+par(mai = c(0, 0, 0.2, 0), xaxs = "i", yaxs = "i")
+map_params <- mapCountryData(joined,
+  catMethod = "fixedWidth",
+  nameColumnToPlot = "hf_score",
+  missingCountryCol = "grey",
+  addLegend = FALSE,
+  mapTitle = "Freedom Index by Country - 2017"
+)
+map <- do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
 ```
 
 This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and red indicates a higher level of freedom. The grey represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom. 
+<br>
+<br>
 
 ```{r chart3, echo=FALSE}
 chart3
