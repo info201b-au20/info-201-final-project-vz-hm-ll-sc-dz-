@@ -26,7 +26,7 @@ total_data_2017$ef_score <- as.numeric(as.character(total_data_2017$ef_score))
 total_data_2017$pf_score <- as.numeric(as.character(total_data_2017$pf_score))
 
 
-ggplot(data = total_data_2017) +
+chart3 <- ggplot(data = total_data_2017) +
   geom_point(
     mapping = aes(x = pf_score, y = ef_score, color = region), size = 2.5
     ) +

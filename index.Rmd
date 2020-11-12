@@ -61,11 +61,11 @@ Above all, every table of interest present a possible direction to do more explo
 
 ## Visualizations
 
-```{r chart1, include=FALSE}
-plot(chart1)
+```{r chart1, echo=FALSE}
+chart1
 ```
 
-_Explanations for Legend Labels:_
+_Explanations for_ **Legend** _Labels:_
 <br>
 `pf_identity_divorce` measures whether women and men **1)** have the same legal
 rights to initiate divorce and **2)** have the same requirements for divorce.
@@ -91,16 +91,6 @@ map <- do.call( addMapLegend, c(map_params, legendWidth=0.5, legendMar = 2))
 
 This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and red indicates a higher level of freedom. The grey represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom. 
 
-```{r chart3, include=FALSE}
-ggplot(data = total_data_2017) +
-  geom_point(
-    mapping = aes(x = pf_score, y = ef_score, color = region), size = 2.5
-    ) +
-    scale_color_brewer(palette = "Set3") +
-  scale_x_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
-  scale_y_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
-  labs(
-    title = paste("Personal and Economic Freedom 2017"),
-    x = "Personal Freedom",
-    y = "Economic Freedom")
+```{r chart3, echo=FALSE}
+chart3
 ```

@@ -48,11 +48,12 @@ df_long <- gather(df, legend, mean_index, -region)
 chart1 <-
   ggplot(data = df_long, aes(x = region, y = mean_index, fill = legend)) +
   geom_col(position = position_dodge()) +
-  labs(title =
-         "Personal Freedom: Identity and Relationships in 2017 (By Region)") +
+  labs(title = "Personal Freedom: Identity and Relationships in 2017",
+       subtitle = "(By Region)") +
   labs(x = "Region") +
   labs(y = "Mean Index") +
-  labs(fill = "Legend")
+  labs(fill = "Legend") +
+  coord_flip()
 
 ggsave(filename = "pf_identity_grouped_bar_chart.png",
        device = "png",
