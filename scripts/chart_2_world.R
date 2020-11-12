@@ -2,7 +2,7 @@ library(tidyverse)
 library(rworldmap)
 
 #import human freedom index data
-hfi <- read.csv("hfi_cc_2019.csv", header = TRUE, stringsAsFactors = FALSE)
+hfi <- read.csv("hfi_cc_2019 copy.csv", header = TRUE, stringsAsFactors = FALSE)
 
 #take only the most current data
 current <- hfi %>% 
