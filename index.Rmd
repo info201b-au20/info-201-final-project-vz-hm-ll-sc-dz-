@@ -6,6 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 source("scripts/chart_1_pf_identity.R")
 source("scripts/chart_2_world.R")
+source("scripts/chart_3_scatterplot.R")
 ```
 
 ## Introduction
@@ -54,5 +55,16 @@ map <- do.call( addMapLegend, c(mapParams, legendWidth=0.5, legendMar = 2))
 
 This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and red indicates a higher level of freedom. The grey represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom. 
 
-```{r chart3, echo=FALSE}
+```{r chart3, include=FALSE}
+ggplot(data = total_data_2017) +
+  geom_point(
+    mapping = aes(x = pf_score, y = ef_score, color = region), size = 2.5
+    ) +
+    scale_color_brewer(palette = "Set3") +
+  scale_x_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
+  scale_y_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
+  labs(
+    title = paste("Personal and Economic Freedom 2017"),
+    x = "Personal Freedom",
+    y = "Economic Freedom")
 ```
