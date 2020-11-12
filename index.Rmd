@@ -1,0 +1,37 @@
+---
+title: "HFI Report"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+source("scripts/chart_2_world.R")
+```
+
+## Introduction
+Here, we look to investigate what factors shape human freedom across the world. The [Human Freedom Index](https://www.kaggle.com/gsutters/the-human-freedom-index) is a way to quantify human freedom based off of measures such as personal, civil, and economic freedom. The data operates under the assumption that human freedom is is defined as the absence of coercive constraint and is ranked on a scale from 1 (least freedom) to 10 (most freedom). Through all the protests and controversy, we want to see how these freedom indexes have changed over time, as well as what countries have been progressive enough for these indexes to increase.
+
+The data comes from the Cato Institute, the Fraser Institute, and the Liberales Institut at the Friedrich Naumann Foundation for Freedom.
+
+## Summary
+The country with the highest human freedom idex (HFI) was [] and the country with the lowest HFI was []. 
+
+## Table 
+
+## Visualizations
+
+```{r chart1, echo=FALSE}
+```
+
+This graph demonstrates the differences in personal freedoms across geographic regions. 
+
+
+```{r chart2, echo=FALSE}
+par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+mapParams <- mapCountryData(joined, catMethod ='fixedWidth',  nameColumnToPlot="hf_score", missingCountryCol = 'grey', addLegend = FALSE, mapTitle='Freedom Index by Country - 2017')
+map <- do.call( addMapLegend, c(mapParams, legendWidth=0.5, legendMar = 2))
+```
+
+This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and red indicates a higher level of freedom. The grey represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom. 
+
+```{r chart3, echo=FALSE}
+```
