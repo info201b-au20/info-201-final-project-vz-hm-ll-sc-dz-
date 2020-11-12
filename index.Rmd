@@ -4,9 +4,10 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-source("./scripts/chart_1_pf_identity.R")
-source("./scripts/chart_2_world.R")
-source("./scripts/chart_3_scatterplot.R")
+# source("./scripts/chart_1_pf_identity.R")
+# source("./scripts/chart_2_world.R")
+# source("./scripts/chart_3_scatterplot.R")
+source("./scripts/table_summary.R")
 ```
 
 ## Introduction
@@ -18,12 +19,50 @@ The data comes from the Cato Institute, the Fraser Institute, and the Liberales 
 The country with the highest human freedom idex (HFI) was ["New Zealand"] and the country with the lowest HFI was ["Syria"]. As for the average human freedom across different regions, North America ranks the highest, followed by Western Europe, East Asia, Oceania, 
 Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia, South Asia, Sub-Saharan Africa, while Middle East & North Africa ranks the lowest. 
 
-## Table 
+## Table
+Since the main focus of our data is to quantify human freedom, the overall trend human freedom scores across the countries, region, the correlation between personal freedom and economic freedom, women-specific Personal Freedom Score and its indicator scores, all of which make up the majority part of the data may be of some interest that enable us to understand more about such quantification of human freedom.  
+
+First, we want to examine whether there is a trend of human freedom scores by country over time.  
+```{r}
+trend_overall_countries
+```
+From this table, we will be able to tell that the Overall human freedom score across the countries is not showing noticeable improvement from 2008 to 2017, some had slightly improvement while some got worse.  
+
+Then looking at specifically in 2017 in more detail, we explore overall human freedom scores across the region  
+```{r}
+overall_region_2017
+```
+In terms of the overall human freedom on average across the region in 2017,
+North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia, South Asia, Sub-Saharan Africa, Middle East & North Africa being the lowest.  
+
+After looking at the overall human freedom score, we take a look of the personal and economic scores. Here, by creating a new column, we will be able to tell which aspect of scores outweigh the other in each country.  
+```{r}
+ef_pf
+
+per_over_eco
+
+eco_over_per
+```
+In general, Western Europe & North America countries have higher personal freedom scores, with some of the lowest economic freedom scores while the others are included in both cases.    
+
+Since the data purposely factor out female freedom scores, it can be informative to exmaine. Here, the focus is the most recent year 2017 and to see the difference across region.  
+```{r}
+women_pf_2017
+```
+In terms of the safety and security aspect for women across the region in 2017, Sub-Saharan Africa ranks the highest, followed by Latin America & the Caribbean, Eastern Europe Western Europe, South Asia, Middle East & North Africa, East Asia, Caucasus & Central Asia, Oceania and North America being the lowest.  
+
+To understand the female freedom score clearly, it is best to take a closer look on its indicators' score.  
+```{r}
+avg_women_pf_2017
+```
+In terms of the Women-Specific Personal Freedom Indicator across the region on average in 2017, Caucasus & Central Asia ranks the highest, followed by East Asia, Eastern Europe, Latin America & the Caribbean, North America, Oceania, South Asia, Western Europe, Middle East & North Africa, and Sub-Saharan Africa being the lowest.  
+
+Above all, every table of interest present a possible direction to do more exploration on this data.
 
 ## Visualizations
 
 ```{r chart1, include=FALSE}
-plot(chart1)
+# plot(chart1)
 ```
 
 _Explanations for Legend Labels:_
@@ -45,23 +84,23 @@ This graph demonstrates the differences in personal freedoms across geographic r
 
 
 ```{r chart2, echo=FALSE}
-par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
-map_params <- mapCountryData(joined, catMethod ='fixedWidth',  nameColumnToPlot="hf_score", missingCountryCol = 'grey', addLegend = FALSE, mapTitle='Freedom Index by Country - 2017')
-map <- do.call( addMapLegend, c(mapParams, legendWidth=0.5, legendMar = 2))
+# par(mai=c(0,0,0.2,0),xaxs="i",yaxs="i")
+# map_params <- mapCountryData(joined, catMethod ='fixedWidth',  nameColumnToPlot="hf_score", missingCountryCol = 'grey', addLegend = FALSE, mapTitle='Freedom Index by Country - 2017')
+# map <- do.call( addMapLegend, c(mapParams, legendWidth=0.5, legendMar = 2))
 ```
 
 This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and red indicates a higher level of freedom. The grey represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom. 
 
 ```{r chart3, include=FALSE}
-ggplot(data = total_data_2017) +
-  geom_point(
-    mapping = aes(x = pf_score, y = ef_score, color = region), size = 2.5
-    ) +
-    scale_color_brewer(palette = "Set3") +
-  scale_x_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
-  scale_y_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
-  labs(
-    title = paste("Personal and Economic Freedom 2017"),
-    x = "Personal Freedom",
-    y = "Economic Freedom")
+# ggplot(data = total_data_2017) +
+#   geom_point(
+#     mapping = aes(x = pf_score, y = ef_score, color = region), size = 2.5
+#     ) +
+#     scale_color_brewer(palette = "Set3") +
+#   scale_x_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
+#   scale_y_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
+#   labs(
+#     title = paste("Personal and Economic Freedom 2017"),
+#     x = "Personal Freedom",
+#     y = "Economic Freedom")
 ```
