@@ -1,7 +1,7 @@
 library(tidyverse)
 library(RColorBrewer)
 
-hfi_2019_data <- read.csv("../hfi_cc_2019.csv")
+hfi_2019_data <- read.csv("hfi_cc_2019 copy.csv")
 
 #pf = personal freedom
 pf_data <- hfi_2019_data %>%
