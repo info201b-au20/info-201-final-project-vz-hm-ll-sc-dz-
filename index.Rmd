@@ -11,7 +11,9 @@ source("./scripts/table_summary.R")
 ```
 
 ## Introduction
-Here, we look to investigate what factors shape human freedom across the world. The [Human Freedom Index](https://www.kaggle.com/gsutters/the-human-freedom-index) is a way to quantify human freedom based off of measures such as personal, civil, and economic freedom. The data operates under the assumption that human freedom is is defined as the absence of coercive constraint and is ranked on a scale from 1 (least freedom) to 10 (most freedom). Through all the protests and controversy, we want to see how these freedom indexes have changed over time, as well as what countries have been progressive enough for these indexes to increase.
+Here, we look to investigate what factors shape human freedom across the world. The [Human Freedom Index](https://www.kaggle.com/gsutters/the-human-freedom-index) is a way to quantify human freedom based off of measures such as personal, civil, and economic freedom. 
+It uses 76 distinct indicators in the main areas of: Rule of Law, Security and Safety, Movement, Religion, Association, Assembly, and Civil Society, Expression and Information, Identity and Relationships, Size of Government, Legal System and Property Rights, Access to Sound Money, Freedom to Trade Internationally, Regulation of Credit, Labor, and Business.
+The data operates under the assumption that human freedom is is defined as the absence of coercive constraint and is ranked on a scale from 1 (least freedom) to 10 (most freedom). Through all the protests and controversy, we want to see how these freedom indexes have changed over time, as well as what countries have been progressive enough for these indexes to increase.
 
 The data comes from the Cato Institute, the Fraser Institute, and the Liberales Institut at the Friedrich Naumann Foundation for Freedom.
 
@@ -65,7 +67,7 @@ Above all, every table of interest present a possible direction to do more explo
 chart1
 ```
 
-This chart demonstrates the differences in personal freedoms in establishing one’s own identity and to have intimate and familial relationships with others across different
+This chart demonstrates the differences in personal freedoms in establishing one’s own identity, sexual orientation, and to have intimate and familial relationships with others across different
 regions.
 
 Each of the **Legend** labels represents a specific index in personal freedom regarding one's identity and relationships. The explanations for these labels are as follows:
@@ -84,7 +86,7 @@ between women are legal.
 between men are legal.
 <br>
 <br>
-From the chart above, we could observe that regions like Sub-Saharan Africa, South Asia, and Middle East & North Africa, which mainly consist of countries that are considered less "developed", exhibit significantly lower mean index for three or more of the categories considered.
+From the chart above, we can observe that regions like Sub-Saharan Africa, South Asia, and Middle East & North Africa, which mainly consist of countries that are considered less "developed", exhibit significantly lower mean index for three or more of the categories considered. Of those areas, the freedom of divorce and the freedom to have male-male relationships have the lowest indexes.
 <br>
 <br>
 This graph demonstrates the differences in personal freedoms across geographic regions.
@@ -100,7 +102,7 @@ map_params <- mapCountryData(joined,
 do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
 ```
 
-This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and blue indicates a higher level of freedom. The white represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom.
+This plot shows a geographical representation of the overall human freedom index values across countries. Yellow indicates low freedom and blue indicates a higher level of freedom. The white represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom.
 <br>
 <br>
 
@@ -108,4 +110,4 @@ This plot shows a geographical representation of the freedom index values across
 chart3
 ```
 
-This plot shows the relationship of personal and economic freedom in 2017. They're color coded by region. Middle East & North Africa have the lowest personal and economic freedoms, and Africa as a whole is the region with the most widespread freedoms. Clumped heavily at the top of the scatter-plot is Western Europe, where personal and economic freedoms are the highest.
+This plot shows the relationship of personal and economic freedom in 2017. They're color coded by region. Middle East & North Africa have the lowest personal and economic freedoms, and Africa as a whole is the region with the most widespread freedoms, ranging anywhere from 2-8. Clumped heavily at the top of the scatter-plot is Western Europe, where personal and economic freedoms are the highest. From this scatterplot, we can see that economic and personal freedom are positively correlated, meaning generally those who have higher economic freedom often have higher personal freedom.
