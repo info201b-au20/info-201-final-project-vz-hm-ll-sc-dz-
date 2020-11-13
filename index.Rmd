@@ -16,7 +16,7 @@ Here, we look to investigate what factors shape human freedom across the world. 
 The data comes from the Cato Institute, the Fraser Institute, and the Liberales Institut at the Friedrich Naumann Foundation for Freedom.
 
 ## Summary
-For year 2017, the country with the highest human freedom idex (HFI) was [New Zealand] and the country with the lowest HFI was [Syria]. As for the average human freedom across different regions, North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia, South Asia, Sub-Saharan Africa, while Middle East & North Africa ranks the lowest. Comparing 
+For year 2017, the country with the highest human freedom idex (HFI) was [New Zealand]     and the country with the lowest HFI was [Syria]. As for the average human freedom    across different regions, North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia, South Asia, Sub-Saharan Africa, while Middle East & North Africa ranks the lowest. Comparing 
 personal freedom with women freedom in different regions, the data indicates higher women freedom in [Caucasus & Central Asia], [Oceania] and [Norht America] but lower personal freedom in these regions.Besides, economic freedom sometimes is a vital factor of evaluating human freedom in different regions. It is expected that the data implies an almost the same rank of economic freedom as that of human freedom, with North America ranks the highest, followed by Western Europe, East Aisa, Oceania, Eastern Europe, Caucasus & Central Asia, South Asia, Latin America & the Caribbean, Middle East & North Africa and Sub-Saharan Africa the lowest.
 
 ## Table
@@ -90,17 +90,18 @@ From the chart above, we could observe that regions like Sub-Saharan Africa, Sou
 This graph demonstrates the differences in personal freedoms across geographic regions.
 
 ```{r chart2, echo=FALSE}
+par(mai = c(0, 0, 0.2, 0), xaxs = "i", yaxs = "i")
 map_params <- mapCountryData(joined,
   catMethod = "fixedWidth",
   nameColumnToPlot = "hf_score",
-  missingCountryCol = "white",
+  missingCountryCol = "grey",
   addLegend = FALSE,
-  mapTitle = "Freedom Index by Country - 2017",
-  colourPalette = colour_palette)
-do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
+  mapTitle = "Freedom Index by Country - 2017"
+)
+map <- do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
 ```
 
-This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and blue indicates a higher level of freedom. The white represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom.
+This plot shows a geographical representation of the freedom index values across countries. Yellow indicates low freedom and red indicates a higher level of freedom. The grey represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom. 
 <br>
 <br>
 
