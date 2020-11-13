@@ -1,5 +1,5 @@
 # Final Project
-Use this `REAMDE.md` file to describe your final project (as detailed on Canvas).
+Use this `REAMDE.md` file to describe your final project (as detailed on Canvas).  
 https://info201b-au20.github.io/info-201-final-project-vz-hm-ll-sc-dz-/
 
 ## Domain of interest
