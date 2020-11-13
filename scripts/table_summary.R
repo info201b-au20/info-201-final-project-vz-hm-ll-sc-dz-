@@ -28,6 +28,7 @@ trend_overall_countries <-
     values_from = hf_score # Where do the new column values come from?
   )
 
+trend_overall_countries <- as.data.frame(trend_overall_countries)
 # Result: Overall human freedom score across the countries is not showing noticeable improvement
 # from 2008 to 2017, some had slightly improvement while some got worse. 
 
@@ -42,6 +43,7 @@ overall_region_2017 <-
 
 overall_region_2017 %>% pull(region)
 
+overall_region_2017 <- as.data.frame(overall_region_2017)
 # Result: In terms of the overall human freedom on average across the region in 2017,
 # North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe,              
 # Latin America & the Caribbean, Caucasus & Central Asia, South Asia, Sub-Saharan Africa,                    
@@ -58,6 +60,7 @@ per_over_eco <- unique(ef_pf$region[ef_pf$ef_pf_corr >= 1])
 
 eco_over_per <- unique(ef_pf$region[ef_pf$ef_pf_corr < 1])
 
+ef_pf <- as.data.frame(ef_pf)
 # Result: In general, Western Europe & North America countries have higher personal freedom scores,
 # with some of the lowest economic freedom scores while the others are included in both cases.
 
@@ -72,6 +75,7 @@ women_pf_2017 <- hfi %>%
 
 women_pf_2017 %>% pull(region)
 
+women_pf_2017 <- as.data.frame(women_pf_2017)
 # Result: In terms of the safety and security aspect for women across the region in 2017, Sub-Saharan Africa
 # ranks the highest, followed by Latin America & the Caribbean, Eastern Europe              
 # Western Europe, South Asia, Middle East & North Africa, East Asia, Caucasus & Central Asia, Oceania                     
@@ -94,6 +98,7 @@ avg_women_pf_2017 <- hfi %>%
 
 avg_women_pf_2017 %>% pull(region)
 
+avg_women_pf_2017 <- as.data.frame(avg_women_pf_2017)
 # Result: In terms of the Women-Specific Personal Freedom Indicator across the region on average in 2017,
 # Caucasus & Central Asia ranks the highest, followed by East Asia, Eastern Europe,              
 # Latin America & the Caribbean, North America, Oceania, South Asia, Western Europe,                    

@@ -24,7 +24,7 @@ Since the main focus of our data is to quantify human freedom, the overall trend
 
 First, we want to examine whether there is a trend of human freedom scores by country over time.  
 ```{r}
-trend_overall_countries
+head(trend_overall_countries)
 ```
 From this table, we will be able to tell that the Overall human freedom score across the countries is not showing noticeable improvement from 2008 to 2017, some had slightly improvement while some got worse.  
 
@@ -37,7 +37,7 @@ North America ranks the highest, followed by Western Europe, East Asia, Oceania,
 
 After looking at the overall human freedom score, we take a look of the personal and economic scores. Here, by creating a new column, we will be able to tell which aspect of scores outweigh the other in each country.  
 ```{r}
-ef_pf
+head(ef_pf)
 
 per_over_eco
 
