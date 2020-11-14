@@ -2,7 +2,7 @@ library(dplyr)
 library(tidyverse)
 
 # import HFI data
-hfi <- read.csv("../hfi_cc_2019.csv", header = TRUE, stringsAsFactors = FALSE)
+hfi <- read.csv("scripts/hfi_cc_2019_copy.csv", header = TRUE, stringsAsFactors = FALSE)
 
 # Pull out the name of the country which scores the highest for human freedom,
 # as of the most recent year
@@ -47,4 +47,23 @@ ef <- hfi %>%
   filter(avg_ef == max(avg_ef)) %>% 
   pull(region)
 
+<<<<<<< HEAD
   
+=======
+# Create summary info list
+summary_info <- list()
+summary_info$hf_highest <- hf_highest
+summary_info$hf_lowest <- hf_lowest
+summary_info$region_highest_hf_score <- high_to_low_rank %>%
+  filter(mean_hf_score == max(mean_hf_score)) %>%
+  pull(region)
+summary_info$region_lowest_hf_score <- high_to_low_rank %>%
+  filter(mean_hf_score == min(mean_hf_score)) %>%
+  pull(region)
+summary_info$region_highest_ef <- ef %>%
+  filter(avg_ef == max(avg_ef)) %>%
+  pull(region)
+summary_info$region_lowest_ef <- ef %>%
+  filter(avg_ef == min(avg_ef)) %>%
+  pull(region)
+>>>>>>> 8393b91ba73eb6532c11b42dde4037e9ca8a62ec
