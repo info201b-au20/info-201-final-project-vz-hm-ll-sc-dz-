@@ -93,6 +93,7 @@ between men are legal.
 <br>
 From the chart above, we can observe that regions like Sub-Saharan Africa, South Asia, and Middle East & North Africa, which mainly consist of countries that are considered less "developed", exhibit significantly lower mean index for three or more of the categories considered. Of those areas, the freedom of divorce and the freedom to have male-male relationships have the lowest indexes.
 <br>
+<hr>
 <br>
 This graph demonstrates the differences in personal freedoms across geographic regions.
 
@@ -109,6 +110,7 @@ do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
 
 This chart was intended to show a geographical representation of the overall human freedom index values across countries. Yellow indicates low freedom and blue indicates a higher level of freedom. The white represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" (North America, Australia, and Western Europe) also have a higher level of human freedom.
 <br>
+<hr>
 <br>
 
 ```{r chart3, echo=FALSE}

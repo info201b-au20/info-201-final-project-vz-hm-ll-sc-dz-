@@ -54,8 +54,8 @@ summary_info <- list()
 summary_info$hf_highest <- hf_highest
 summary_info$hf_lowest <- hf_lowest
 summary_info$hf_highest_region <- hf_highest_region
-summary_info$wf_highest <- wf
-summary_info$ef_highest <- ef
+summary_info$wf_highest_region <- wf
+summary_info$ef_highest_region <- ef
 
 # summary_info$region_highest_hf_score <- high_to_low_rank %>%
 #   filter(mean_hf_score == max(mean_hf_score)) %>%
