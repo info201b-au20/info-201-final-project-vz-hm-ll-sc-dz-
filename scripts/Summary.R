@@ -44,3 +44,10 @@ ef <- hfi %>%
   summarise(avg_ef = mean(as.numeric(ef_score))) %>% 
   arrange(-avg_ef)
 
+# Create summary info list
+summary_info <- list()
+summary_info$hf_highest <- hf_highest
+summary_info$hf_lowest <- hf_lowest
+summary_info$high_to_low_rank <- high_to_low_rank
+summary_info$pf_to_wf <- pf_to_wf
+summary_info$ef <- ef

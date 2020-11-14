@@ -22,6 +22,10 @@ The data comes from the Cato Institute, the Fraser Institute, and the Liberales 
 For year 2017, the country with the highest human freedom index (HFI) was `r hf_highest` and the country with the lowest HFI was `r hf_lowest`. As for the average human freedom across different regions, North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia, South Asia, Sub-Saharan Africa, while Middle East & North Africa ranks the lowest. Comparing 
 personal freedom with women freedom in different regions, the data indicates higher women freedom in [Caucasus & Central Asia], [Oceania] and [North America] but lower personal freedom in these regions. Besides, economic freedom sometimes is a vital factor of evaluating human freedom in different regions. It is expected that the data implies an almost the same rank of economic freedom as that of human freedom, with North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe, Caucasus & Central Asia, South Asia, Latin America & the Caribbean, Middle East & North Africa and Sub-Saharan Africa the lowest.
 
+```{r}
+summary_info
+```
+
 ## Table
 Since the main focus of our data is to quantify human freedom, the overall trend human freedom scores across the countries, region, the correlation between personal freedom and economic freedom, women-specific Personal Freedom Score and its indicator scores, all of which make up the majority part of the data may be of some interest that enable us to understand more about such quantification of human freedom.  
 
@@ -68,7 +72,7 @@ Above all, every table of interest present a possible direction to do more explo
 chart1
 ```
 
-This chart demonstrates the differences in personal freedoms in establishing one’s own identity, sexual orientation, and to have intimate and familial relationships with others across different
+This chart was intended to demonstrate the differences in personal freedoms in establishing one’s own identity, sexual orientation, and to have intimate and familial relationships with others across different
 regions.
 
 Each of the **Legend** labels represents a specific index in personal freedom regarding one's identity and relationships. The explanations for these labels are as follows:
@@ -103,7 +107,7 @@ map_params <- mapCountryData(joined,
 do.call(addMapLegend, c(map_params, legendWidth = 0.5, legendMar = 2))
 ```
 
-This plot shows a geographical representation of the overall human freedom index values across countries. Yellow indicates low freedom and blue indicates a higher level of freedom. The white represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" also have a higher level of human freedom.
+This chart was intended to show a geographical representation of the overall human freedom index values across countries. Yellow indicates low freedom and blue indicates a higher level of freedom. The white represents countries without values. From the graphic, it is clear that countries that are generally considered more "developed" (North America, Australia, and Western Europe) also have a higher level of human freedom.
 <br>
 <br>
 
@@ -111,4 +115,4 @@ This plot shows a geographical representation of the overall human freedom index
 chart3
 ```
 
-This plot shows the relationship of personal and economic freedom in 2017. They're color coded by region. Middle East & North Africa have the lowest personal and economic freedoms, and Africa as a whole is the region with the most widespread freedoms, ranging anywhere from 2-8. Clumped heavily at the top of the scatter-plot is Western Europe, where personal and economic freedoms are the highest. From this scatterplot, we can see that economic and personal freedom are positively correlated, meaning generally those who have higher economic freedom often have higher personal freedom.
+This chart was intended to show the relationship of personal and economic freedom in 2017. They're color coded by region. Middle East & North Africa have the lowest personal and economic freedoms, and Africa as a whole is the region with the most widespread freedoms, ranging anywhere from 2-8. Clumped heavily at the top of the scatter-plot is Western Europe, where personal and economic freedoms are the highest. From this scatterplot, we can see that economic and personal freedom are positively correlated, meaning generally those who have higher economic freedom often have higher personal freedom.
