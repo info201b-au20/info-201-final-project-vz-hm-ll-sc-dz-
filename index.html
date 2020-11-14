@@ -421,7 +421,106 @@ summary {
 </div>
 <div id="summary" class="section level2">
 <h2>Summary</h2>
-<p>For year 2017, the country with the highest human freedom idex (HFI) was <code>hf_highest</code> and the country with the lowest HFI was <code>hf_lowest</code>. As for the average human freedom across different regions, North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe, Latin America &amp; the Caribbean, Caucasus &amp; Central Asia, South Asia, Sub-Saharan Africa, while Middle East &amp; North Africa ranks the lowest. Comparing personal freedom with women freedom in different regions, the data indicates higher women freedom in [Caucasus &amp; Central Asia], [Oceania] and [North America] but lower personal freedom in these regions.Besides, economic freedom sometimes is a vital factor of evaluating human freedom in different regions. It is expected that the data implies an almost the same rank of economic freedom as that of human freedom, with North America ranks the highest, followed by Western Europe, East Aisa, Oceania, Eastern Europe, Caucasus &amp; Central Asia, South Asia, Latin America &amp; the Caribbean, Middle East &amp; North Africa and Sub-Saharan Africa the lowest.</p>
+<p>For year 2017, the country with the highest human freedom index (HFI) was New Zealand and the country with the lowest HFI was Syria. As for the average human freedom across different regions, North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe, Latin America &amp; the Caribbean, Caucasus &amp; Central Asia, South Asia, Sub-Saharan Africa, while Middle East &amp; North Africa ranks the lowest. Comparing personal freedom with women freedom in different regions, the data indicates higher women freedom in [Caucasus &amp; Central Asia], [Oceania] and [North America] but lower personal freedom in these regions.Besides, economic freedom sometimes is a vital factor of evaluating human freedom in different regions. It is expected that the data implies an almost the same rank of economic freedom as that of human freedom, with North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe, Caucasus &amp; Central Asia, South Asia, Latin America &amp; the Caribbean, Middle East &amp; North Africa and Sub-Saharan Africa the lowest.</p>
+<pre class="r"><code>summary_info</code></pre>
+<pre><code>## $hf_highest
+## [1] &quot;New Zealand&quot;
+## 
+## $hf_lowest
+## [1] &quot;Syria&quot;
+## 
+## $high_to_low_rank
+## # A tibble: 10 x 2
+##    region                        mean_hf_score
+##    &lt;chr&gt;                                 &lt;dbl&gt;
+##  1 North America                          8.56
+##  2 Western Europe                         8.41
+##  3 East Asia                              7.91
+##  4 Oceania                                7.82
+##  5 Eastern Europe                         7.60
+##  6 Latin America &amp; the Caribbean          6.95
+##  7 Caucasus &amp; Central Asia                6.84
+##  8 South Asia                             6.47
+##  9 Sub-Saharan Africa                     6.23
+## 10 Middle East &amp; North Africa             5.67
+## 
+## $pf_to_wf
+## # A tibble: 162 x 121
+## # Groups:   countries [162]
+##     year ISO_code countries region hf_score hf_rank hf_quartile pf_rol_procedur…
+##    &lt;int&gt; &lt;chr&gt;    &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;           
+##  1  2017 ALB      Albania   Easte… 7.84     38      1           6.7             
+##  2  2017 DZA      Algeria   Middl… 4.99     155     4           -               
+##  3  2017 AGO      Angola    Sub-S… 5.4      151     4           -               
+##  4  2017 ARG      Argentina Latin… 6.86     77      2           7.1             
+##  5  2017 ARM      Armenia   Cauca… 7.42     54      2           -               
+##  6  2017 AUS      Australia Ocean… 8.62     5       1           8.4             
+##  7  2017 AUT      Austria   Weste… 8.48     13      1           9               
+##  8  2017 AZE      Azerbaij… Cauca… 6.22     121     3           -               
+##  9  2017 BHS      Bahamas   Latin… 7.56     48      2           6.9             
+## 10  2017 BHR      Bahrain   Middl… 6.63     95      3           -               
+## # … with 152 more rows, and 113 more variables: pf_rol_civil &lt;chr&gt;,
+## #   pf_rol_criminal &lt;chr&gt;, pf_rol &lt;chr&gt;, pf_ss_homicide &lt;chr&gt;,
+## #   pf_ss_disappearances_disap &lt;chr&gt;, pf_ss_disappearances_violent &lt;chr&gt;,
+## #   pf_ss_disappearances_organized &lt;chr&gt;,
+## #   pf_ss_disappearances_fatalities &lt;chr&gt;, pf_ss_disappearances_injuries &lt;chr&gt;,
+## #   pf_ss_disappearances &lt;chr&gt;, pf_ss_women_fgm &lt;chr&gt;,
+## #   pf_ss_women_inheritance_widows &lt;chr&gt;,
+## #   pf_ss_women_inheritance_daughters &lt;chr&gt;, pf_ss_women_inheritance &lt;chr&gt;,
+## #   pf_ss_women &lt;chr&gt;, pf_ss &lt;chr&gt;, pf_movement_domestic &lt;chr&gt;,
+## #   pf_movement_foreign &lt;chr&gt;, pf_movement_women &lt;chr&gt;, pf_movement &lt;chr&gt;,
+## #   pf_religion_estop_establish &lt;chr&gt;, pf_religion_estop_operate &lt;chr&gt;,
+## #   pf_religion_estop &lt;chr&gt;, pf_religion_harassment &lt;chr&gt;,
+## #   pf_religion_restrictions &lt;chr&gt;, pf_religion &lt;chr&gt;,
+## #   pf_association_association &lt;chr&gt;, pf_association_assembly &lt;chr&gt;,
+## #   pf_association_political_establish &lt;chr&gt;,
+## #   pf_association_political_operate &lt;chr&gt;, pf_association_political &lt;chr&gt;,
+## #   pf_association_prof_establish &lt;chr&gt;, pf_association_prof_operate &lt;chr&gt;,
+## #   pf_association_prof &lt;chr&gt;, pf_association_sport_establish &lt;chr&gt;,
+## #   pf_association_sport_operate &lt;chr&gt;, pf_association_sport &lt;chr&gt;,
+## #   pf_association &lt;chr&gt;, pf_expression_killed &lt;chr&gt;,
+## #   pf_expression_jailed &lt;chr&gt;, pf_expression_influence &lt;chr&gt;,
+## #   pf_expression_control &lt;chr&gt;, pf_expression_cable &lt;chr&gt;,
+## #   pf_expression_newspapers &lt;chr&gt;, pf_expression_internet &lt;chr&gt;,
+## #   pf_expression &lt;chr&gt;, pf_identity_legal &lt;chr&gt;, pf_identity_sex_male &lt;chr&gt;,
+## #   pf_identity_sex_female &lt;chr&gt;, pf_identity_sex &lt;chr&gt;,
+## #   pf_identity_divorce &lt;chr&gt;, pf_identity &lt;chr&gt;, pf_score &lt;chr&gt;,
+## #   pf_rank &lt;chr&gt;, ef_government_consumption &lt;chr&gt;,
+## #   ef_government_transfers &lt;chr&gt;, ef_government_enterprises &lt;chr&gt;,
+## #   ef_government_tax_income &lt;chr&gt;, ef_government_tax_payroll &lt;chr&gt;,
+## #   ef_government_tax &lt;chr&gt;, ef_government_soa &lt;chr&gt;, ef_government &lt;chr&gt;,
+## #   ef_legal_judicial &lt;chr&gt;, ef_legal_courts &lt;chr&gt;, ef_legal_protection &lt;chr&gt;,
+## #   ef_legal_military &lt;chr&gt;, ef_legal_integrity &lt;chr&gt;,
+## #   ef_legal_enforcement &lt;chr&gt;, ef_legal_restrictions &lt;chr&gt;,
+## #   ef_legal_police &lt;chr&gt;, ef_legal_crime &lt;chr&gt;, ef_legal_gender &lt;chr&gt;,
+## #   ef_legal &lt;chr&gt;, ef_money_growth &lt;chr&gt;, ef_money_sd &lt;chr&gt;,
+## #   ef_money_inflation &lt;chr&gt;, ef_money_currency &lt;chr&gt;, ef_money &lt;chr&gt;,
+## #   ef_trade_tariffs_revenue &lt;chr&gt;, ef_trade_tariffs_mean &lt;chr&gt;,
+## #   ef_trade_tariffs_sd &lt;chr&gt;, ef_trade_tariffs &lt;chr&gt;,
+## #   ef_trade_regulatory_nontariff &lt;chr&gt;, ef_trade_regulatory_compliance &lt;chr&gt;,
+## #   ef_trade_regulatory &lt;chr&gt;, ef_trade_black &lt;chr&gt;,
+## #   ef_trade_movement_foreign &lt;chr&gt;, ef_trade_movement_capital &lt;chr&gt;,
+## #   ef_trade_movement_visit &lt;chr&gt;, ef_trade_movement &lt;chr&gt;, ef_trade &lt;chr&gt;,
+## #   ef_regulation_credit_ownership &lt;chr&gt;, ef_regulation_credit_private &lt;chr&gt;,
+## #   ef_regulation_credit_interest &lt;chr&gt;, ef_regulation_credit &lt;chr&gt;,
+## #   ef_regulation_labor_minwage &lt;chr&gt;, ef_regulation_labor_firing &lt;chr&gt;,
+## #   ef_regulation_labor_bargain &lt;chr&gt;, ef_regulation_labor_hours &lt;chr&gt;,
+## #   ef_regulation_labor_dismissal &lt;chr&gt;, …
+## 
+## $ef
+## # A tibble: 10 x 2
+##    region                        avg_ef
+##    &lt;chr&gt;                          &lt;dbl&gt;
+##  1 North America                   8.14
+##  2 Western Europe                  7.76
+##  3 East Asia                       7.68
+##  4 Oceania                         7.42
+##  5 Eastern Europe                  7.20
+##  6 Caucasus &amp; Central Asia         7.01
+##  7 South Asia                      6.76
+##  8 Latin America &amp; the Caribbean   6.72
+##  9 Middle East &amp; North Africa      6.26
+## 10 Sub-Saharan Africa              6.21</code></pre>
 </div>
 <div id="table" class="section level2">
 <h2>Table</h2>
