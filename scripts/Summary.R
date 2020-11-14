@@ -2,7 +2,7 @@ library(dplyr)
 library(tidyverse)
 
 # import HFI data
-hfi <- read.csv("../hfi_cc_2019.csv", header = TRUE, stringsAsFactors = FALSE)
+hfi <- read.csv("scripts/hfi_cc_2019_copy.csv", header = TRUE, stringsAsFactors = FALSE)
 
 # Pull out the name of the country which scores the highest for human freedom,
 # as of the most recent year
