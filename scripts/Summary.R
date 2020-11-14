@@ -19,28 +19,32 @@ hf_lowest <- hfi %>%
   filter(hf_score == min(hf_score, na.rm = T)) %>% 
   pull(countries)
 
-# Rank the average human freedom score, from highest to lowest, grouped by
-# different regions, as of the most recent year
-high_to_low_rank <- hfi %>% 
+# Calculate the average human freedom score, from highest to lowest, grouped by
+# different regions, as of the most recent year. Then, pull out the region with
+# the highest average human freedom score
+hf_highest_region <- hfi %>% 
   filter(year == max(year)) %>% 
   group_by(region) %>% 
   summarise(mean_hf_score = mean(as.numeric(hf_score))) %>% 
-  arrange(-mean_hf_score)
+  filter(mean_hf_score == max(mean_hf_score)) %>% 
+  pull(region)
 
-# Compare personal freedom with women freedom across different regions, as of 
+# Calculate and display the region with the highest women freedom, as of 
 # the most recent year
-pf_to_wf <- hfi %>% 
+wf <- hfi %>% 
   filter(year == max(year)) %>% 
-  group_by(countries) %>%
-  mutate(pf_wf_ratio = as.numeric(pf_score) / as.numeric(pf_ss_women))
-  unique(pf_to_wf$region[pf_to_wf$pf_wf_ratio >= 1])
-  unique(pf_to_wf$region[pf_to_wf$pf_wf_ratio < 1])
-
-# Show and rank the average economic freedom across different regions, as of the 
-# most recent year
+  group_by(region) %>%
+  summarise(mean_wf = mean(as.numeric(pf_ss_women))) %>% 
+  filter(mean_wf == max(mean_wf)) %>% 
+  pull(region)
+ 
+# Calculate the average economic freedom across different regions, as of the 
+# most recent year, display the region with the highest economic freedom
 ef <- hfi %>% 
   filter(year == max(year)) %>% 
   group_by(region) %>% 
   summarise(avg_ef = mean(as.numeric(ef_score))) %>% 
-  arrange(-avg_ef)
+  filter(avg_ef == max(avg_ef)) %>% 
+  pull(region)
 
+  
