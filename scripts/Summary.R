@@ -48,6 +48,15 @@ ef <- hfi %>%
 summary_info <- list()
 summary_info$hf_highest <- hf_highest
 summary_info$hf_lowest <- hf_lowest
-summary_info$high_to_low_rank <- high_to_low_rank
-summary_info$pf_to_wf <- pf_to_wf
-summary_info$ef <- ef
+summary_info$region_highest_hf_score <- high_to_low_rank %>%
+  filter(mean_hf_score == max(mean_hf_score)) %>%
+  pull(region)
+summary_info$region_lowest_hf_score <- high_to_low_rank %>%
+  filter(mean_hf_score == min(mean_hf_score)) %>%
+  pull(region)
+summary_info$region_highest_ef <- ef %>%
+  filter(avg_ef == max(avg_ef)) %>%
+  pull(region)
+summary_info$region_lowest_ef <- ef %>%
+  filter(avg_ef == min(avg_ef)) %>%
+  pull(region)
