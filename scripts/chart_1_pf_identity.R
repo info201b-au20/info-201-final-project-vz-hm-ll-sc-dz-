@@ -1,4 +1,5 @@
 library(tidyverse)
+library(RColorBrewer)
 
 setwd(getwd())
 hfi <- read.csv("scripts/hfi_cc_2019_copy.csv",
@@ -52,8 +53,14 @@ chart1 <-
        subtitle = "(By Region)") +
   labs(x = "Region") +
   labs(y = "Mean Index") +
-  labs(fill = "Legend") +
-  coord_flip()
+  labs(fill = "PF Identity") +
+  coord_flip() +
+  scale_fill_manual(labels =
+                       c("Divorce",
+                         "Legal",
+                         "Female-female",
+                         "Male-male"),
+                    values = brewer.pal(4, "Accent"))
 
 ggsave(filename = "pf_identity_grouped_bar_chart.png",
        device = "png",
