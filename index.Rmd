@@ -31,20 +31,20 @@ Since the main focus of our data is to quantify human freedom, the overall trend
 
 First, we want to examine whether there is a trend of human freedom scores by country over time.  
 ```{r, echo=FALSE}
-head(trend_overall_countries)
+knitr::kable(trend_overall_countries)
 ```
 From this table, we will be able to tell that the Overall human freedom score across the countries is not showing noticeable improvement from 2008 to 2017, some had slightly improvement while some got worse.  
 
 Then looking at specifically in 2017 in more detail, we explore overall human freedom scores across the region  
 ```{r, echo=FALSE}
-overall_region_2017
+knitr::kable(overall_region_2017)
 ```
 In terms of the overall human freedom on average across the region in 2017,
 North America ranks the highest, followed by Western Europe, East Asia, Oceania, Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia, South Asia, Sub-Saharan Africa, Middle East & North Africa being the lowest.  
 
 After looking at the overall human freedom score, we take a look of the personal and economic scores. Here, by creating a new column, we will be able to tell which aspect of scores outweigh the other in each country.  
 ```{r, echo=FALSE}
-head(ef_pf)
+knitr::kable(ef_pf)
 
 per_over_eco
 
@@ -54,13 +54,13 @@ In general, Western Europe & North America countries have higher personal freedo
 
 Since the data purposely factor out female freedom scores, it can be informative to exmaine. Here, the focus is the most recent year 2017 and to see the difference across region.  
 ```{r, echo=FALSE}
-women_pf_2017
+knitr::kable(women_pf_2017)
 ```
 In terms of the safety and security aspect for women across the region in 2017, Sub-Saharan Africa ranks the highest, followed by Latin America & the Caribbean, Eastern Europe Western Europe, South Asia, Middle East & North Africa, East Asia, Caucasus & Central Asia, Oceania and North America being the lowest.  
 
 To understand the female freedom score clearly, it is best to take a closer look on its indicators' score.  
 ```{r, echo=FALSE}
-avg_women_pf_2017
+knitr::kable(avg_women_pf_2017)
 ```
 In terms of the Women-Specific Personal Freedom Indicator across the region on average in 2017, Caucasus & Central Asia ranks the highest, followed by East Asia, Eastern Europe, Latin America & the Caribbean, North America, Oceania, South Asia, Western Europe, Middle East & North Africa, and Sub-Saharan Africa being the lowest.  
 
