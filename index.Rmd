@@ -31,7 +31,7 @@ Since the main focus of our data is to quantify human freedom, the overall trend
 
 First, we want to examine whether there is a trend of human freedom scores by country over time.  
 ```{r, echo=FALSE}
-knitr::kable(trend_overall_countries)
+knitr::kable(head(trend_overall_countries, 12))
 ```
 From this table, we will be able to tell that the Overall human freedom score across the countries is not showing noticeable improvement from 2008 to 2017, some had slightly improvement while some got worse.  
 
@@ -44,11 +44,7 @@ North America ranks the highest, followed by Western Europe, East Asia, Oceania,
 
 After looking at the overall human freedom score, we take a look of the personal and economic scores. Here, by creating a new column, we will be able to tell which aspect of scores outweigh the other in each country.  
 ```{r, echo=FALSE}
-knitr::kable(ef_pf)
-
-per_over_eco
-
-eco_over_per
+knitr::kable(head(ef_pf, 12))
 ```
 In general, Western Europe & North America countries have higher personal freedom scores, with some of the lowest economic freedom scores while the others are included in both cases.    
 
@@ -56,13 +52,7 @@ Since the data purposely factor out female freedom scores, it can be informative
 ```{r, echo=FALSE}
 knitr::kable(women_pf_2017)
 ```
-In terms of the safety and security aspect for women across the region in 2017, Sub-Saharan Africa ranks the highest, followed by Latin America & the Caribbean, Eastern Europe Western Europe, South Asia, Middle East & North Africa, East Asia, Caucasus & Central Asia, Oceania and North America being the lowest.  
-
-To understand the female freedom score clearly, it is best to take a closer look on its indicators' score.  
-```{r, echo=FALSE}
-knitr::kable(avg_women_pf_2017)
-```
-In terms of the Women-Specific Personal Freedom Indicator across the region on average in 2017, Caucasus & Central Asia ranks the highest, followed by East Asia, Eastern Europe, Latin America & the Caribbean, North America, Oceania, South Asia, Western Europe, Middle East & North Africa, and Sub-Saharan Africa being the lowest.  
+In terms of the safety and security aspect for women across the region in 2017, Sub-Saharan Africa ranks the highest, followed by Latin America & the Caribbean, Eastern Europe Western Europe, South Asia, Middle East & North Africa, East Asia, Caucasus & Central Asia, Oceania and North America being the lowest.
 
 Above all, every table of interest present a possible direction to do more exploration on this data.
 
