@@ -65,7 +65,8 @@ map_list <- col_names[col_names != "ISO_code" &
 year_input <- selectInput(
   inputId = "year_input",
   label = "Choose a year",
-  choices = 2008:2018
+  choices = 2008:2017,
+  selected = 2017
 )
 # define user input for mapping variable
 map_input <- selectInput(
@@ -77,6 +78,10 @@ map_input <- selectInput(
 map_sidebar_content <- sidebarPanel(
   # An input to select variable to map
   map_input,
+  tags$p("Inputs with the ", strong("pf"), "identifier signify personal freedom ",
+         "related topics."),
+  tags$p("Inputs with the ", strong("ef"), "identifier signify economic freedom ",
+         "related topics."),
   year_input
 )
 map_main_content <- mainPanel(
@@ -100,12 +105,8 @@ interactive_1 <- tabPanel(
 interactive_2 <- tabPanel(
   "Map",
   titlePanel("Human Freedom Index Data"),
-  # A `sidebarLayout()` that contains...
   sidebarLayout(
-    # Your `map_sidebar_content`
     map_sidebar_content,
-    
-    # Your `map_main_content`
     map_main_content
   )  
 )
