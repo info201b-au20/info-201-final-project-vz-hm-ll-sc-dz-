@@ -38,8 +38,19 @@ year_bar_input <- selectInput(
 # define side bar content for bar chart tab
 bar_sidebar_content <- sidebarPanel(
   identity_input,
+  tags$p(strong("Legal"), "measures the degree to which people are free ",
+         "to legally change their sex and gender."),
+  tags$p(strong("Same_Sex"), "measures the extent to which sexual ",
+         "relationships between same sex are legal."),
+  tags$p(strong("Same_Sex_Female"), "measures the extent to which sexual ",
+         "relationships between women are legal."),
+  tags$p(strong("Same_Sex_Male"), "measures the extent to which sexual ",
+         "relationships between men are legal."),
+  tags$p(strong("Divorce"), "measures whether women and men ",
+         em("1)"), " have the same legal rights to initiate divorce and ",
+         em("2)"), "have the same requirements for divorce."),
   year_bar_input,
-  tags$p("Note that Legal Index does not have data from 2008 to 2014.")
+  tags$p(em("Note that Legal Index does not have data from 2008 to 2014."))
 )
 bar_main_content <- mainPanel(
   plotlyOutput("bar")
