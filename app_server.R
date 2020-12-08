@@ -102,9 +102,14 @@ server <- function(input, output) {
     chart <- ggplot(plot_data) +
       geom_col(mapping = aes_string(x = "Region",
                                     y = input$identity_input)) +
-      coord_flip()
+      coord_flip() +
+      labs(title = title)
     
     ggplotly(chart)
+  })
+  
+  output$bar_note <- renderText({
+    "Note that Legal Index does not have data from 2008 to 2014."
   })
   
   pf_plot <- reactive({

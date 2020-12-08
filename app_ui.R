@@ -38,7 +38,8 @@ year_bar_input <- selectInput(
 # define side bar content for bar chart tab
 bar_sidebar_content <- sidebarPanel(
   identity_input,
-  year_bar_input
+  year_bar_input,
+  textOutput("bar_note")
 )
 bar_main_content <- mainPanel(
   plotlyOutput("bar")
