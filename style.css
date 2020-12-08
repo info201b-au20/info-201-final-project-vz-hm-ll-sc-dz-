@@ -6,7 +6,7 @@ header {
   font-family: 'Chelsea Market', cursive;
   position: sticky;
   top: 0;
-  height: 10vh;
+  height: 15vh;
   background-color: #B58BAB;
 }
 
@@ -25,6 +25,11 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 2vw;
   font-size: 50px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+p {
   text-align: center;
   color: whitesmoke;
 }
