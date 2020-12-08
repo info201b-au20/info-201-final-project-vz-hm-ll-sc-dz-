@@ -11,6 +11,41 @@ hfi <- read.csv("scripts/hfi_cc_2019_copy.csv",
                 na.strings = c("-", "NA")
 )
 
+#### Code for Bar Chart ####
+pf_identity_data <- hfi %>%
+  select(year,
+         countries,
+         region,
+         pf_identity,
+         pf_identity_legal,
+         pf_identity_sex,
+         pf_identity_sex_female,
+         pf_identity_sex_male,
+         pf_identity_divorce)
+
+# summarize data by year and region
+pf_identity_summary_by_region <- pf_identity_data %>%
+  group_by(year, region) %>%
+  summarize(pf_identity_legal_by_region =
+              mean(as.numeric(pf_identity_legal), na.rm = T),
+            pf_identity_sex_by_region =
+              mean(as.numeric(pf_identity_sex), na.rm = T),
+            pf_identity_sex_female_by_region =
+              mean(as.numeric(pf_identity_sex_female), na.rm = T),
+            pf_identity_sex_male_by_region =
+              mean(as.numeric(pf_identity_sex_male), na.rm = T),
+            pf_identity_identity_divorce_by_region =
+              mean(as.numeric(pf_identity_divorce), na.rm = T),
+            .groups = "drop")
+
+colnames(pf_identity_summary_by_region) <- c("Year",
+                                             "Region",
+                                             "Legal",
+                                             "Same_Sex",
+                                             "Same_Sex_Female",
+                                             "Same_Sex_Male",
+                                             "Divorce")
+
 #### Code for Map Visual ####
 
 # convert year to character
@@ -53,11 +88,31 @@ build_map <- function(data, map.var) {
 
 ##### start shinyServer #####
 server <- function(input, output) {
+  output$bar <- renderPlotly({
+    title <- paste0(input$identity_input,
+                    " Index in ",
+                    input$year_bar_input,
+                    " by Region")
+    
+    #data_input <- sub("[[:space:]]+$", "_", input$identity_input)
+    
+    plot_data <- pf_identity_summary_by_region %>%
+      filter(Year == input$year_bar_input)
+    
+    chart <- ggplot(plot_data) +
+      geom_col(mapping = aes_string(x = "Region",
+                                    y = input$identity_input)) +
+      coord_flip()
+    
+    ggplotly(chart)
+  })
+  
   pf_plot <- reactive({
     hfi %>%
       select(year, countries, ISO_code, input$mapvar) %>%
       filter(year == input$year_input)
   })
+  
   output$map <- renderPlotly({
     return(build_map(pf_plot(), input$mapvar))
   })
