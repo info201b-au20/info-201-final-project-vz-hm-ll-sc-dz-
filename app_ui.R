@@ -115,15 +115,26 @@ interactive_2 <- tabPanel(
   
 #)
 
-#summary <- tabPanel(
-  
-#)
+summary <- tabPanel(
+  "Conclusion",
+  tags$body(
+    tags$header(
+      tags$h1("Main Takeaways") 
+    ),
+    tags$main(
+      tags$section(tags$p("something for the bar chart")),
+      tags$section(tags$p("somthing for the map")),
+      tags$section(tags$p("something for the third interactive plot"))
+    )
+  )
+)
 
 # combine user interface elements
 ui <- navbarPage(
-  introduction,
+  includeCSS("style.css"),
+  #introduction,
   interactive_1,
-  interactive_2
+  interactive_2,
   #interactive_3,
-  #summary
+  summary
 )

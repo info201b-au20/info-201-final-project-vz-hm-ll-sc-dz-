@@ -1,0 +1,30 @@
+body, section {
+  margin: auto;
+}
+
+header {
+  font-family: 'Chelsea Market', cursive;
+  position: sticky;
+  top: 0;
+  height: 10vh;
+  background-color: #B58BAB;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  margin: 10px;
+  background-color: #B58BAB;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 2vw;
+  font-size: 50px;
+  text-align: center;
+  color: whitesmoke;
+}
