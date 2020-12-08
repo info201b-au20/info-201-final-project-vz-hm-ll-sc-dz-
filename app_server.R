@@ -94,8 +94,6 @@ server <- function(input, output) {
                     input$year_bar_input,
                     " by Region")
     
-    #data_input <- sub("[[:space:]]+$", "_", input$identity_input)
-    
     plot_data <- pf_identity_summary_by_region %>%
       filter(Year == input$year_bar_input)
     
@@ -106,10 +104,6 @@ server <- function(input, output) {
       labs(title = title)
     
     ggplotly(chart)
-  })
-  
-  output$bar_note <- renderText({
-    "Note that Legal Index does not have data from 2008 to 2014."
   })
   
   pf_plot <- reactive({

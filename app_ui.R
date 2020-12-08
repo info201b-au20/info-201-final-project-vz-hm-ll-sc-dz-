@@ -23,7 +23,7 @@ pf_identity_list <- c("Legal",
 # define user input for bar chart data
 identity_input <- selectInput(
   inputId = "identity_input",
-  label = "Choose a personal freedom identity index",
+  label = "Choose an identity index",
   choices = pf_identity_list
 )
 
@@ -39,7 +39,7 @@ year_bar_input <- selectInput(
 bar_sidebar_content <- sidebarPanel(
   identity_input,
   year_bar_input,
-  textOutput("bar_note")
+  tags$p("Note that Legal Index does not have data from 2008 to 2014.")
 )
 bar_main_content <- mainPanel(
   plotlyOutput("bar")
@@ -79,7 +79,7 @@ introduction <- tabPanel(
 
 interactive_1 <- tabPanel(
   "Bar Chart",
-  titlePanel("Identity Index By Region"),
+  titlePanel("Personal Freedom Identity Index"),
   sidebarLayout(
     bar_sidebar_content,
     bar_main_content
