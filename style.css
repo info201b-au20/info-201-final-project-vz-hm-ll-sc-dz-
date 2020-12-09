@@ -41,3 +41,9 @@ section p {
   color: whitesmoke;
   font-size: 15px;
 }
+
+#bar_header {
+  font-size: 30px
+  text-align: left;
+  color: initial
+}
