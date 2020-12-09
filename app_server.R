@@ -101,6 +101,7 @@ server <- function(input, output) {
       geom_col(mapping = aes_string(x = "Region",
                                     y = input$identity_input),
                fill = input$color_input) +
+      scale_y_continuous(limits = c(0, 10)) +
       coord_flip() +
       labs(title = title)
     
