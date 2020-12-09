@@ -99,7 +99,8 @@ server <- function(input, output) {
     
     chart <- ggplot(plot_data) +
       geom_col(mapping = aes_string(x = "Region",
-                                    y = input$identity_input)) +
+                                    y = input$identity_input),
+               fill = input$color_input) +
       coord_flip() +
       labs(title = title)
     

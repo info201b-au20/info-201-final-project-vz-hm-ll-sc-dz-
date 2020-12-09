@@ -35,8 +35,17 @@ year_bar_input <- selectInput(
   selected = 2017
 )
 
+# define user input for color of bars
+color_input <- selectInput(
+  inputId = "color_input",
+  label = "Choose a color",
+  choices = colors(),
+  selected = "slateblue3"
+)
+
 # define side bar content for bar chart tab
 bar_sidebar_content <- sidebarPanel(
+  color_input,
   identity_input,
   tags$p(strong("Legal"), "measures the degree to which people are free ",
          "to legally change their sex and gender."),
@@ -52,6 +61,8 @@ bar_sidebar_content <- sidebarPanel(
   year_bar_input,
   tags$p(em("Note that Legal Index does not have data from 2008 to 2014."))
 )
+
+# define main content for bar chart tab
 bar_main_content <- mainPanel(
   plotlyOutput("bar")
 )
