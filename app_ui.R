@@ -101,6 +101,30 @@ map_main_content <- mainPanel(
   plotlyOutput("map")
 )
 
+#### Scatterplot elements ####
+
+scatter_year <- selectInput(
+  inputId = "scatter_year",
+  label = "Choose a year",
+  choices = 2008:2017,
+  selected = 2017
+)
+
+scatter_sidebar_content <- sidebarPanel(
+  scatter_year,
+  tags$p(strong("Personal Freedom"), "is the degree to which people",
+         "are free to enjoy the major freedoms",
+         "often referred to as civil liberties—freedom of",
+         "speech, religion, association, and assembly."),
+  tags$p(strong("Economic Freedom"), "is represented as the freedom ",
+         "to trade or to use sound money."),
+)
+
+scatter_main_content <- mainPanel(
+  plotlyOutput("scatter")
+)
+
+
 #### Define user interface elements ####
 introduction <- tabPanel(
   'introduction'
@@ -128,9 +152,14 @@ interactive_2 <- tabPanel(
   )  
 )
 
-#interactive_3 <- tabPanel(
-  
-#)
+interactive_3 <- tabPanel(
+  "Scatter",
+  titlePanel("Human Freedom vs. Economic Freedom"),
+  sidebarLayout(
+    scatter_sidebar_content,
+    scatter_main_content
+  )
+)
 
 summary <- tabPanel(
   "Conclusion",
@@ -176,6 +205,6 @@ ui <- navbarPage(
   #introduction,
   interactive_1,
   interactive_2,
-  #interactive_3,
+  interactive_3,
   summary
 )
