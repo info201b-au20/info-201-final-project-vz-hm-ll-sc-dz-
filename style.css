@@ -43,7 +43,11 @@ section p {
 }
 
 #bar_header {
-  font-size: 30px
-  text-align: left;
-  color: initial
+  font-size: 50px;
+  text-align: center;
+  color: initial;
+}
+
+#bar_sub_header {
+  font-size: 40px;
 }

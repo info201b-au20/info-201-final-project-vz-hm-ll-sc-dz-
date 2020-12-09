@@ -45,8 +45,6 @@ color_input <- selectInput(
 
 # define side bar content for bar chart tab
 bar_sidebar_content <- sidebarPanel(
-  color_input,
-  tags$hr(),
   identity_input,
   tags$p(strong("Legal"), "measures the degree to which people are free ",
          "to legally change their sex and gender."),
@@ -61,7 +59,9 @@ bar_sidebar_content <- sidebarPanel(
          em("2)"), "have the same requirements for divorce."),
   tags$hr(),
   year_bar_input,
-  tags$p(em("Note that Legal Index does not have data from 2008 to 2014."))
+  tags$p(em("Note that Legal Index does not have data from 2008 to 2014.")),
+  tags$hr(),
+  color_input
 )
 
 # define main content for bar chart tab
@@ -108,7 +108,10 @@ introduction <- tabPanel(
 
 interactive_1 <- tabPanel(
   "Bar Chart",
-  titlePanel(tags$h1(id = "bar_header", "Personal Freedom Identity")),
+  titlePanel(tags$h1(id = "bar_header",
+                     "Personal Freedom:",
+                     tags$br(),
+                     tags$em(id = "bar_sub_header", "Identity"))),
   tags$hr(),
   sidebarLayout(
     bar_sidebar_content,
