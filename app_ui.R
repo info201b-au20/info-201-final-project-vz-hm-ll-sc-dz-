@@ -35,6 +35,14 @@ year_bar_input <- selectInput(
   selected = 2017
 )
 
+# define user input for color of bars
+color_input <- selectInput(
+  inputId = "color_input",
+  label = "Choose a color",
+  choices = colors(),
+  selected = "skyblue4"
+)
+
 # define side bar content for bar chart tab
 bar_sidebar_content <- sidebarPanel(
   identity_input,
@@ -49,9 +57,14 @@ bar_sidebar_content <- sidebarPanel(
   tags$p(strong("Divorce"), "measures whether women and men ",
          em("1)"), " have the same legal rights to initiate divorce and ",
          em("2)"), "have the same requirements for divorce."),
+  tags$hr(),
   year_bar_input,
-  tags$p(em("Note that Legal Index does not have data from 2008 to 2014."))
+  tags$p(em("Note that Legal Index does not have data from 2008 to 2014.")),
+  tags$hr(),
+  color_input
 )
+
+# define main content for bar chart tab
 bar_main_content <- mainPanel(
   plotlyOutput("bar")
 )
@@ -95,7 +108,11 @@ introduction <- tabPanel(
 
 interactive_1 <- tabPanel(
   "Bar Chart",
-  titlePanel("Personal Freedom Identity Index"),
+  titlePanel(tags$h1(id = "bar_header",
+                     "Personal Freedom:",
+                     tags$br(),
+                     tags$em(id = "bar_sub_header", "Identity"))),
+  tags$hr(),
   sidebarLayout(
     bar_sidebar_content,
     bar_main_content
@@ -115,15 +132,50 @@ interactive_2 <- tabPanel(
   
 #)
 
-#summary <- tabPanel(
-  
-#)
+summary <- tabPanel(
+  "Conclusion",
+  tags$body(
+    tags$header(
+      tags$h1("Main Takeaways") 
+    ),
+    tags$main(
+      tags$section(
+        tags$h2("something for the bar chart (placeholder):"),
+        tags$p(
+        "Comparing personal freedom with women
+        freedom in different regions, the data indicates higher women freedom
+        in Caucasus & Central Asia, Oceania and North America but those same
+        regions have lower personal freedom.")),
+      tags$section(
+        tags$h2("somthing for the map (placeholder):"),
+        tags$p(
+        "For year 2017, the country with the highest human
+        freedom index (HFI) was New Zealand and the country with the lowest HFI
+        was Syria. As for the average HFI across all regions, North America
+        ranks the highest, followed by Western Europe, East Asia, Oceania,
+        Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia,
+        South Asia, Sub-Saharan Africa, while Middle East & North Africa ranks
+        the lowest.")),
+      tags$section(
+        tags$h2("something for the third interactive plot (placeholder):"),
+        tags$p(
+        "Economic freedom sometimes is a vital factor of evaluating human freedom
+        in different regions. It is expected that the data implies an almost the
+        same rank of economic freedom as that of human freedom, with North
+        America ranks the highest, followed by Western Europe, East Asia,
+        Oceania, Eastern Europe, Caucasus & Central Asia, South Asia,
+        Latin America & the Caribbean, Middle East & North Africa and
+        Sub-Saharan Africa the lowest."))
+    )
+  )
+)
 
 # combine user interface elements
 ui <- navbarPage(
-  introduction,
+  includeCSS("style.css"),
+  #introduction,
   interactive_1,
-  interactive_2
+  interactive_2,
   #interactive_3,
-  #summary
+  summary
 )

@@ -99,9 +99,12 @@ server <- function(input, output) {
     
     chart <- ggplot(plot_data) +
       geom_col(mapping = aes_string(x = "Region",
-                                    y = input$identity_input)) +
-      coord_flip() +
-      labs(title = title)
+                                    y = input$identity_input),
+               fill = input$color_input) +
+      scale_y_continuous(limits = c(0, 10)) +
+      labs(title = title,
+           y = paste(input$identity_input, "Index")) +
+      coord_flip()
     
     ggplotly(chart)
   })
