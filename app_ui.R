@@ -13,6 +13,27 @@ hfi <- read.csv("scripts/hfi_cc_2019_copy.csv",
 # Define column names
 col_names <- colnames(hfi)
 
+#### Introduction Tab ####
+# introduction <- tabPanel(
+#   "Introduction",
+#   tags$body(
+#     tags$header(
+#       tags$h1("Human Freedom Index Report")
+#     ),
+#     tags$p("This Project aims to investigate factors that shape human freedom 
+#            across the world and how different categorical measures of human 
+#            freedom vary from countries and continents. The Human Freedom Index
+#            have indicators that are related to violence, gender, sex, economic
+#            freedom and so on, which are heated topics for years. By digging depper
+#            into these factors, we want to examine the change of different index
+#            over time."),
+#     tags$hr(),
+#     tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
+#     tags$hr(),
+#     tags$p("")
+#   )
+# )
+
 #### Bar Chart elements ####
 pf_identity_list <- c("Legal",
                       "Same_Sex",
@@ -103,8 +124,28 @@ map_main_content <- mainPanel(
 
 #### Define user interface elements ####
 introduction <- tabPanel(
-  'introduction'
-)
+  'introduction',
+    tags$body(
+      tags$header(
+        tags$h1("Human Freedom Index Report")
+      ),
+      tags$hr(),
+      tags$p("This Project aims to investigate factors that shape human freedom
+             across the world and how different categorical measures of human
+             freedom vary from countries and continents. The Human Freedom Index
+             have indicators that are related to violence, gender, sex, economic
+             freedom and so on, which are heated topics for years. By digging depper
+             into these factors, we want to examine the change of different index
+             over time."),
+      tags$hr(),
+      tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
+      tags$hr(),
+      tags$p("We utilized various set of data relating to human freedom index which
+             includes 76 distinct indicators in the main areas of: Rule of Law,
+             Security and Safety, Movement, Religion")
+    )
+  )
+
 
 interactive_1 <- tabPanel(
   "Bar Chart",
@@ -173,7 +214,7 @@ summary <- tabPanel(
 # combine user interface elements
 ui <- navbarPage(
   includeCSS("style.css"),
-  #introduction,
+  introduction,
   interactive_1,
   interactive_2,
   #interactive_3,
