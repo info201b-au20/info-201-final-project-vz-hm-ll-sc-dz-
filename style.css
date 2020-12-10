@@ -60,5 +60,9 @@ p {
 }
 
 #bar_sub_header {
-  font-size: 30px;
+  font-size: 40px;
+}
+
+#scatter_sub_header {
+  font-size: 20px;
 }

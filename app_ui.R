@@ -152,18 +152,18 @@ introduction <- tabPanel(
       published in 2019, which contains information from the years 2008 to 2017.
              It includes 76 distinct indicators in the main areas of: Rule of Law,
              Security and Safety, Movement, Religion, Association, Assembly, and
-             Civil Society, Expression and Information, Identity and Relationships, 
-             Size of Government, Legal System and Property Rights, Access to Sound 
-             Money, Freedom to Trade Internationally, Regulation of Credit, Labor, 
-             and Business. The data operates under the assumption that human freedom 
-             is is defined as the absence of coercive constraint and is ranked on 
+             Civil Society, Expression and Information, Identity and Relationships,
+             Size of Government, Legal System and Property Rights, Access to Sound
+             Money, Freedom to Trade Internationally, Regulation of Credit, Labor,
+             and Business. The data operates under the assumption that human freedom
+             is is defined as the absence of coercive constraint and is ranked on
              a scale from 1 (least freedom) to 10 (most freedom).")
     )
   )
 
 
 interactive_1 <- tabPanel(
-  "Bar Chart",
+  "PF: Identity",
   titlePanel(tags$h1(id = "bar_header",
                      "Personal Freedom:",
                      tags$br(),
@@ -185,12 +185,20 @@ interactive_2 <- tabPanel(
   sidebarLayout(
     map_sidebar_content,
     map_main_content
-  )  
+  )
 )
 
 interactive_3 <- tabPanel(
-  "Scatter",
-  titlePanel("Personal Freedom vs. Economic Freedom"),
+  "PF vs. EF",
+  titlePanel(tags$h1(id = "bar_header",
+                     "Comparison:",
+                     tags$br(),
+                     tags$em(id = "scatter_sub_header",
+                             "Personal Freedom",
+                             tags$br(),
+                             "vs.",
+                             tags$br(),
+                             "Economic Freedom"))),
   sidebarLayout(
     scatter_sidebar_content,
     scatter_main_content
@@ -201,7 +209,7 @@ summary <- tabPanel(
   "Conclusion",
   tags$body(
     tags$header(
-      tags$h1("Main Takeaways") 
+      tags$h1("Main Takeaways")
     ),
     tags$main(
       tags$section(
@@ -212,7 +220,7 @@ summary <- tabPanel(
         in Caucasus & Central Asia, Oceania and North America but those same
         regions have lower personal freedom.")),
       tags$section(
-        tags$h2("human freedom index (HFI):"),
+        tags$h2("Human Freedom Index (HFI):"),
         tags$p(
         "For year 2017, the country with the highest human
         freedom index (HFI) was New Zealand and the country with the lowest HFI
@@ -224,13 +232,19 @@ summary <- tabPanel(
       tags$section(
         tags$h2("Personal Freedom and Economic freedom:"),
         tags$p(
-        "Economic freedom sometimes is a vital factor of evaluating human freedom
-        in different regions. It is expected that the data implies an almost the
-        same rank of economic freedom as that of human freedom, with North
-        America ranks the highest, followed by Western Europe, East Asia,
-        Oceania, Eastern Europe, Caucasus & Central Asia, South Asia,
-        Latin America & the Caribbean, Middle East & North Africa and
-        Sub-Saharan Africa the lowest."))
+        "In comparing both ends of the data (2008 and 2017), we can see that
+        there has hasn't been that much change in economic freedom, but
+        there has actually been a decrease in personal freedom, especially in the
+        Middle East & North Africa. In 2008, the lowest numbers for both pf and
+        ef were around 5, but as time went on, personal freedom dropped to as low
+        as 2.5. We can also see an outlier from Latin America & the Caribbean that
+        had a pf sore of 6.3 and an ef score of 4.2, but it has now dropped to
+        a pf score of 5 and an ef score of 2.5. In general, Western Europe has stayed consistently at the top with
+        high pf and ef scores throughout the past 10 years. As of 2017, SubSaharan
+        as well as Middle East & North Africa have the largest ranges for
+        personal freedomss. The biggest takeaway from the analysis
+        of our scatterplot is that overall, personal freedoms have
+        decreased over the years. "))
     )
   )
 )
