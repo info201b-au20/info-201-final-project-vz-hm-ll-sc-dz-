@@ -12,6 +12,7 @@ hfi <- read.csv("scripts/hfi_cc_2019_copy.csv",
 )
 
 #### Code for Bar Chart ####
+mapvar <- NULL
 pf_identity_data <- hfi %>%
   select(
     year,
@@ -69,7 +70,7 @@ sapply(hfi, class)
 hfi$ISO_code[hfi$ISO_code == "BRD"] <- "DEU"
 
 # Map Functions
-build_map <- function(data, map.var) {
+build_map <- function(data, map_var) {
   # specify some map projection/options
   g <- list(
     scope = "world",
@@ -80,12 +81,12 @@ build_map <- function(data, map.var) {
   # Plot
   p <- plot_geo(data) %>%
     add_trace(
-      z = data[, map.var], text = ~countries, locations = ~ISO_code,
-      color = data[, map.var]
+      z = data[, map_var], text = ~countries, locations = ~ISO_code,
+      color = data[, map_var]
     ) %>%
-    colorbar(title = map.var) %>%
+    colorbar(title = map_var) %>%
     layout(
-      title = str_to_title(map.var),
+      title = str_to_title(map_var),
       geo = g
     )
   return(p)

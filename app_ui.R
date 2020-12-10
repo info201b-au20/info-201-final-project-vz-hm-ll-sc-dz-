@@ -139,6 +139,7 @@ introduction <- tabPanel(
         tags$h1("Human Freedom Index Report")
       ),
       tags$hr(),
+      tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
       tags$p("This project aims to investigate factors that shape human freedom
              across the world and how different categorical measures of human
              freedom vary from countries and continents. The Human Freedom Index
@@ -146,11 +147,8 @@ introduction <- tabPanel(
              freedom and so on. This data is highly relevant to today's current
              topics that surround freedom movements against violence and
              discrimination. By digging depper into these factors, we want to
-             answer the question of how these indexes have changed over time."),
-      tags$hr(),
-      tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
-      tags$hr(),
-      tags$p("We utilized data from the most recent Human Freedom Index meansures
+             answer the question of how these indexes have changed over time.",
+             "We utilized data from the most recent Human Freedom Index meansures
       published in 2019, which contains information from the years 2008 to 2017.
              It includes 76 distinct indicators in the main areas of: Rule of Law,
              Security and Safety, Movement, Religion, Association, Assembly, and
@@ -179,7 +177,11 @@ interactive_1 <- tabPanel(
 
 interactive_2 <- tabPanel(
   "Map",
-  titlePanel("Human Freedom Index Data"),
+  titlePanel(tags$h1(id = "bar_header",
+                     "Freedom Index:",
+                     tags$br(),
+                     tags$em(id = "bar_sub_header",
+                             "Global Exploration"))),
   sidebarLayout(
     map_sidebar_content,
     map_main_content
@@ -203,14 +205,14 @@ summary <- tabPanel(
     ),
     tags$main(
       tags$section(
-        tags$h2("Map Analysis:"),
+        tags$h2("Personal Freedom (By Gender):"),
         tags$p(
         "Comparing personal freedom with women
         freedom in different regions, the data indicates higher women freedom
         in Caucasus & Central Asia, Oceania and North America but those same
         regions have lower personal freedom.")),
       tags$section(
-        tags$h2("Barchart Analysis:"),
+        tags$h2("Human Freedom Index (HFI):"),
         tags$p(
         "For year 2017, the country with the highest human
         freedom index (HFI) was New Zealand and the country with the lowest HFI
@@ -220,7 +222,7 @@ summary <- tabPanel(
         South Asia, Sub-Saharan Africa, while Middle East & North Africa ranks
         the lowest.")),
       tags$section(
-        tags$h2("Scatterplot Analysis:"),
+        tags$h2("Personal Freedom and Economic freedom:"),
         tags$p(
         "In comparing both ends of the data (2008 and 2017), we can see that
         there has hasn't been that much change in economic freedom, but
