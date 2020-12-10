@@ -166,7 +166,13 @@ introduction <- tabPanel(
       tags$hr(),
       tags$p("We utilized various set of data relating to human freedom index which
              includes 76 distinct indicators in the main areas of: Rule of Law,
-             Security and Safety, Movement, Religion")
+             Security and Safety, Movement, Religion, Association, Assembly, and
+             Civil Society, Expression and Information, Identity and Relationships, 
+             Size of Government, Legal System and Property Rights, Access to Sound 
+             Money, Freedom to Trade Internationally, Regulation of Credit, Labor, 
+             and Business. The data operates under the assumption that human freedom 
+             is is defined as the absence of coercive constraint and is ranked on 
+             a scale from 1 (least freedom) to 10 (most freedom).")
     )
   )
 
