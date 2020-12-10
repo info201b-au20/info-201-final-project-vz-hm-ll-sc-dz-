@@ -139,6 +139,7 @@ introduction <- tabPanel(
         tags$h1("Human Freedom Index Report")
       ),
       tags$hr(),
+      tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
       tags$p("This project aims to investigate factors that shape human freedom
              across the world and how different categorical measures of human
              freedom vary from countries and continents. The Human Freedom Index
@@ -146,11 +147,8 @@ introduction <- tabPanel(
              freedom and so on. This data is highly relevant to today's current
              topics that surround freedom movements against violence and
              discrimination. By digging depper into these factors, we want to
-             answer the question of how these indexes have changed over time."),
-      tags$hr(),
-      tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
-      tags$hr(),
-      tags$p("We utilized data from the most recent Human Freedom Index meansures
+             answer the question of how these indexes have changed over time.",
+             "We utilized data from the most recent Human Freedom Index meansures
       published in 2019, which contains information from the years 2008 to 2017.
              It includes 76 distinct indicators in the main areas of: Rule of Law,
              Security and Safety, Movement, Religion, Association, Assembly, and
