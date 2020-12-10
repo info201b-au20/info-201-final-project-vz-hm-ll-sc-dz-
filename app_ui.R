@@ -182,6 +182,7 @@ interactive_2 <- tabPanel(
                      tags$br(),
                      tags$em(id = "bar_sub_header",
                              "Global Exploration"))),
+  tags$hr(),
   sidebarLayout(
     map_sidebar_content,
     map_main_content
@@ -199,6 +200,7 @@ interactive_3 <- tabPanel(
                              "vs.",
                              tags$br(),
                              "Economic Freedom"))),
+  tags$hr(),
   sidebarLayout(
     scatter_sidebar_content,
     scatter_main_content
