@@ -176,9 +176,9 @@ interactive_1 <- tabPanel(
 )
 
 interactive_2 <- tabPanel(
-  "Map",
+  "HFI Exploration",
   titlePanel(tags$h1(id = "bar_header",
-                     "Freedom Index:",
+                     "Human Freedom:",
                      tags$br(),
                      tags$em(id = "bar_sub_header",
                              "Global Exploration"))),
