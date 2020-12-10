@@ -91,6 +91,8 @@ map_input <- selectInput(
 map_sidebar_content <- sidebarPanel(
   # An input to select variable to map
   map_input,
+  tags$p("Inputs with the ", strong("hf"), "identifier signify human freedom ",
+         "related topics (a combined score on all freedom types)."),
   tags$p("Inputs with the ", strong("pf"), "identifier signify personal freedom ",
          "related topics."),
   tags$p("Inputs with the ", strong("ef"), "identifier signify economic freedom ",
@@ -141,7 +143,8 @@ introduction <- tabPanel(
       ),
       tags$hr(),
       tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
-      tags$p("This project aims to investigate factors that shape human freedom
+      tags$div(
+        "This project aims to investigate factors that shape human freedom
              across the world and how different categorical measures of human
              freedom vary from countries and continents. The Human Freedom Index
              has indicators that are related to violence, gender, sex, economic
@@ -149,8 +152,10 @@ introduction <- tabPanel(
              topics that surround freedom movements against violence and
              discrimination. By digging depper into these factors, we want to
              answer the question of how these indexes have changed over time.",
-             "We utilized data from the most recent Human Freedom Index meansures
-      published in 2019, which contains information from the years 2008 to 2017.
+             "We utilized data from the most recent",
+      tags$a(href="https://www.kaggle.com/doyouevendata/cato-2017-human-freedom-index", 
+             "Human Freedom Index measures"),       
+      "published in 2019 by Cato, which contains information from the years 2008 to 2017.
              It includes 76 distinct indicators in the main areas of: Rule of Law,
              Security and Safety, Movement, Religion, Association, Assembly, and
              Civil Society, Expression and Information, Identity and Relationships,
@@ -227,15 +232,17 @@ summary <- tabPanel(
         freedom of divorce and the freedom to have male-male relationships
         have the lowest indexes.")),
       tags$section(
-        tags$h2("Human Freedom Index (HFI):"),
+        tags$h2("Human Freedom Across the World:"),
         tags$p(
-        "For year 2017, the country with the highest human
-        freedom index (HFI) was New Zealand and the country with the lowest HFI
-        was Syria. As for the average HFI across all regions, North America
-        ranks the highest, followed by Western Europe, East Asia, Oceania,
-        Eastern Europe, Latin America & the Caribbean, Caucasus & Central Asia,
-        South Asia, Sub-Saharan Africa, while Middle East & North Africa ranks
-        the lowest.")),
+        "When exploring all the facets that contribute to freedom, it becomes clear that
+        some countries exhibit freedom across many different areas, while others may allow
+        some freedoms but are lacking in others. Major \"developed\" countries such as the
+        United States demonstrate high levels of freedom across the board through the decade.
+        On the other hand, areas in Africa and South America are much more varied. These areas seem
+        to struggle the most with the freedom of women. We can also see trends that are 
+        reflected in policies, such as the extremely low freedom of expression in China, a
+        value that has actually decreased over time due to stricter laws.
+        ")),
       tags$section(
         tags$h2("Personal Freedom and Economic freedom:"),
         tags$p(
