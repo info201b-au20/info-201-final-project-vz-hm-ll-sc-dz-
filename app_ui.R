@@ -95,6 +95,7 @@ map_sidebar_content <- sidebarPanel(
          "related topics."),
   tags$p("Inputs with the ", strong("ef"), "identifier signify economic freedom ",
          "related topics."),
+  tags$hr(),
   year_input
 )
 map_main_content <- mainPanel(
