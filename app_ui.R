@@ -13,27 +13,6 @@ hfi <- read.csv("scripts/hfi_cc_2019_copy.csv",
 # Define column names
 col_names <- colnames(hfi)
 
-#### Introduction Tab ####
-# introduction <- tabPanel(
-#   "Introduction",
-#   tags$body(
-#     tags$header(
-#       tags$h1("Human Freedom Index Report")
-#     ),
-#     tags$p("This Project aims to investigate factors that shape human freedom 
-#            across the world and how different categorical measures of human 
-#            freedom vary from countries and continents. The Human Freedom Index
-#            have indicators that are related to violence, gender, sex, economic
-#            freedom and so on, which are heated topics for years. By digging depper
-#            into these factors, we want to examine the change of different index
-#            over time."),
-#     tags$hr(),
-#     tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
-#     tags$hr(),
-#     tags$p("")
-#   )
-# )
-
 #### Bar Chart elements ####
 pf_identity_list <- c("Legal",
                       "Same_Sex",
