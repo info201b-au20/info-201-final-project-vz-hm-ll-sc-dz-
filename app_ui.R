@@ -177,7 +177,11 @@ interactive_1 <- tabPanel(
 
 interactive_2 <- tabPanel(
   "Map",
-  titlePanel("Human Freedom Index Data"),
+  titlePanel(tags$h1(id = "bar_header",
+                     "Freedom Index:",
+                     tags$br(),
+                     tags$em(id = "bar_sub_header",
+                             "Global Exploration"))),
   sidebarLayout(
     map_sidebar_content,
     map_main_content
