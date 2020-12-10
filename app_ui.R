@@ -215,12 +215,15 @@ summary <- tabPanel(
     ),
     tags$main(
       tags$section(
-        tags$h2("Personal Freedom (By Gender):"),
+        tags$h2("Personal Freedom (Identity):"),
         tags$p(
-        "Comparing personal freedom with women
-        freedom in different regions, the data indicates higher women freedom
-        in Caucasus & Central Asia, Oceania and North America but those same
-        regions have lower personal freedom.")),
+        "We can observe that regions like Sub-Saharan Africa, South Asia,
+        and Middle East & North Africa, which mainly consist of countries
+        that are considered less \"developed\", consistently exhibit
+        significantly lower mean index for most of the categories considered
+        over the years. Of those areas, as for the most recent year, the
+        freedom of divorce and the freedom to have male-male relationships
+        have the lowest indexes.")),
       tags$section(
         tags$h2("Human Freedom Index (HFI):"),
         tags$p(
