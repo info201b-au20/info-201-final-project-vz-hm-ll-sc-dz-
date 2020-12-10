@@ -163,7 +163,7 @@ introduction <- tabPanel(
 
 
 interactive_1 <- tabPanel(
-  "Bar Chart",
+  "PF: Identity",
   titlePanel(tags$h1(id = "bar_header",
                      "Personal Freedom:",
                      tags$br(),
@@ -191,10 +191,14 @@ interactive_2 <- tabPanel(
 interactive_3 <- tabPanel(
   "PF vs. EF",
   titlePanel(tags$h1(id = "bar_header",
-                     "Comparison",
+                     "Comparison:",
                      tags$br(),
-                     tags$em(id = "bar_sub_header",
-                             "Personal Freedom vs. Economic Freedom"))),
+                     tags$em(id = "scatter_sub_header",
+                             "Personal Freedom",
+                             tags$br(),
+                             "vs.",
+                             tags$br(),
+                             "Economic Freedom"))),
   sidebarLayout(
     scatter_sidebar_content,
     scatter_main_content
