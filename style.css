@@ -20,7 +20,11 @@ section {
   margin: 10px;
   background-color: #B58BAB;
   width: 33.3%;
+<<<<<<< HEAD
   height: 800px;
+=======
+  height: 100%;
+>>>>>>> @{u}
 }
 
 h1 {
@@ -54,7 +58,7 @@ p {
 }
 
 #bar_header {
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   color: initial;
 }
