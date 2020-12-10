@@ -88,23 +88,17 @@ build_map <- function(data, map.var) {
 
 #### Code for Scatterplot ####
 
-pf_data <- hfi_2019_data %>%
+pf_data <- hfi %>%
   select(year, countries, region, pf_score)
 
-pf_data_by_region <- pf_data %>%
-  arrange(-year, region)
-
-ef_data <- hfi_2019_data %>%
+ef_data <- hfi %>%
   select(year, countries, region, ef_score)
 
-ef_data_by_region <- ef_data %>%
-  arrange(-year, region)
+total_data <- pf_data %>%
+  mutate(ef_score = ef_data$ef_score)
 
-total_data <- pf_data_by_region %>%
-  mutate(ef_score = ef_data_by_region$ef_score)
-
-total_data$ef_score <- as.numeric(as.character(total_data_2017$ef_score))
-total_data$pf_score <- as.numeric(as.character(total_data_2017$pf_score))
+total_data$ef_score <- as.numeric(as.character(total_data$ef_score))
+total_data$pf_score <- as.numeric(as.character(total_data$pf_score))
 
 
 ##### start shinyServer #####
@@ -141,23 +135,24 @@ server <- function(input, output) {
   })
   
   output$scatter <- renderPlotly({
-    title <- paste0("Personal Freedom vs. Economic Freedom in ",
-                    input$scatter_year)
     
     scatter_data <- total_data %>%
       filter(year == input$scatter_year)
     
     scatter <- ggplot(scatter_data) +
       geom_point(
-        mapping = aes(x = pf_score, y = ef_score, color = region), size = 2
+        mapping = aes(x = pf_score, y = ef_score, color = region),
+        size = input$size
       ) +
       scale_color_brewer(palette = "Set3") +
       scale_x_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
       scale_y_continuous(limits = c(2, 10), breaks = c(2, 4, 6, 8, 10)) +
       labs(
+        title = paste0("PF vs. EF in ",
+                       input$scatter_year),
         x = "Personal Freedom",
         y = "Economic Freedom",
-        fill = "Region")
+        color = "Region")
     
     ggplotly(scatter)
   })

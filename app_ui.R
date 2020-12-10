@@ -110,8 +110,14 @@ scatter_year <- selectInput(
   selected = 2017
 )
 
+scatter_size <- sliderInput(
+  "size",
+  label = "Size of points", min = 1, max = 5, value = 2
+)
+
 scatter_sidebar_content <- sidebarPanel(
   scatter_year,
+  scatter_size,
   tags$p(strong("Personal Freedom"), "is the degree to which people",
          "are free to enjoy the major freedoms",
          "often referred to as civil liberties—freedom of",
@@ -127,24 +133,26 @@ scatter_main_content <- mainPanel(
 
 #### Define user interface elements ####
 introduction <- tabPanel(
-  'introduction',
+  'Introduction',
     tags$body(
       tags$header(
         tags$h1("Human Freedom Index Report")
       ),
       tags$hr(),
-      tags$p("This Project aims to investigate factors that shape human freedom
+      tags$p("This project aims to investigate factors that shape human freedom
              across the world and how different categorical measures of human
              freedom vary from countries and continents. The Human Freedom Index
-             have indicators that are related to violence, gender, sex, economic
-             freedom and so on, which are heated topics for years. By digging depper
-             into these factors, we want to examine the change of different index
-             over time."),
+             has indicators that are related to violence, gender, sex, economic
+             freedom and so on. This data is highly relevant to today's current
+             topics that surround freedom movements against violence and
+             discrimination. By digging depper into these factors, we want to
+             answer the question of how these indexes have changed over time."),
       tags$hr(),
       tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
       tags$hr(),
-      tags$p("We utilized various set of data relating to human freedom index which
-             includes 76 distinct indicators in the main areas of: Rule of Law,
+      tags$p("We utilized data from the most recent Human Freedom Index meansures
+      published in 2019, which contains information from the years 2008 to 2017.
+             It includes 76 distinct indicators in the main areas of: Rule of Law,
              Security and Safety, Movement, Religion, Association, Assembly, and
              Civil Society, Expression and Information, Identity and Relationships, 
              Size of Government, Legal System and Property Rights, Access to Sound 
@@ -180,7 +188,7 @@ interactive_2 <- tabPanel(
 
 interactive_3 <- tabPanel(
   "Scatter",
-  titlePanel("Human Freedom vs. Economic Freedom"),
+  titlePanel("Personal Freedom vs. Economic Freedom"),
   sidebarLayout(
     scatter_sidebar_content,
     scatter_main_content
