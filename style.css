@@ -63,3 +63,8 @@ p {
 #scatter_sub_header {
   font-size: 25px;
 }
+
+#tabs {
+  color: #B58BAB;
+  font-family: 'Fjalla One', sans-serif;
+}

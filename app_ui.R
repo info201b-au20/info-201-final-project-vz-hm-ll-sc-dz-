@@ -133,7 +133,7 @@ scatter_main_content <- mainPanel(
 
 #### Define user interface elements ####
 introduction <- tabPanel(
-  'Introduction',
+  tags$h4(id = "tabs", "Introduction"),
     tags$body(
       tags$header(
         tags$h1(id = "bar_header", "Human Freedom Index")
@@ -163,7 +163,7 @@ introduction <- tabPanel(
 
 
 interactive_1 <- tabPanel(
-  "PF: Identity",
+  tags$h4(id = "tabs", "PF: Identity"),
   titlePanel(tags$h1(id = "bar_header",
                      "Personal Freedom:",
                      tags$br(),
@@ -176,7 +176,7 @@ interactive_1 <- tabPanel(
 )
 
 interactive_2 <- tabPanel(
-  "HFI Exploration",
+  tags$h4(id = "tabs", "HFI Exploration"),
   titlePanel(tags$h1(id = "bar_header",
                      "Human Freedom:",
                      tags$br(),
@@ -190,7 +190,7 @@ interactive_2 <- tabPanel(
 )
 
 interactive_3 <- tabPanel(
-  "PF vs. EF",
+  tags$h4(id = "tabs", "PF vs. EF"),
   titlePanel(tags$h1(id = "bar_header",
                      "Comparison:",
                      tags$br(),
@@ -208,7 +208,7 @@ interactive_3 <- tabPanel(
 )
 
 summary <- tabPanel(
-  "Conclusion",
+  tags$h4(id = "tabs", "Conclusion"),
   tags$body(
     tags$header(
       tags$h1(id = "bar_header", "Main Takeaways")
