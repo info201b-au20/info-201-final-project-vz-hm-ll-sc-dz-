@@ -189,8 +189,12 @@ interactive_2 <- tabPanel(
 )
 
 interactive_3 <- tabPanel(
-  "Scatter",
-  titlePanel("Personal Freedom vs. Economic Freedom"),
+  "PF vs. EF",
+  titlePanel(tags$h1(id = "bar_header",
+                     "Comparison",
+                     tags$br(),
+                     tags$em(id = "bar_sub_header",
+                             "Personal Freedom vs. Economic Freedom"))),
   sidebarLayout(
     scatter_sidebar_content,
     scatter_main_content
