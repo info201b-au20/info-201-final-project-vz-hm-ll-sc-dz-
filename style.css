@@ -3,7 +3,7 @@ body, section {
 }
 
 header {
-  font-family: 'Chelsea Market', cursive;
+  font-family: 'Fjalla One', sans-serif;
   position: sticky;
   top: 0;
   height: 15vh;
@@ -58,15 +58,16 @@ p {
 }
 
 #bar_header {
+  font-family: 'Fjalla One', sans-serif;
   font-size: 40px;
   text-align: center;
   color: initial;
 }
 
 #bar_sub_header {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 #scatter_sub_header {
-  font-size: 20px;
+  font-size: 25px;
 }

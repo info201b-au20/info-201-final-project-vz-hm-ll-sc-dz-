@@ -136,7 +136,7 @@ introduction <- tabPanel(
   'Introduction',
     tags$body(
       tags$header(
-        tags$h1("Human Freedom Index Report")
+        tags$h1(id = "bar_header", "Human Freedom Index")
       ),
       tags$hr(),
       tags$img(src = "https://api.time.com/wp-content/uploads/2020/04/dewine-ohio-protest-coronavirus.jpg"),
@@ -197,7 +197,7 @@ interactive_3 <- tabPanel(
                      tags$em(id = "scatter_sub_header",
                              "Personal Freedom",
                              tags$br(),
-                             "vs.",
+                             "vs",
                              tags$br(),
                              "Economic Freedom"))),
   tags$hr(),
@@ -211,7 +211,7 @@ summary <- tabPanel(
   "Conclusion",
   tags$body(
     tags$header(
-      tags$h1("Main Takeaways")
+      tags$h1(id = "bar_header", "Main Takeaways")
     ),
     tags$main(
       tags$section(
