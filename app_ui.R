@@ -213,6 +213,7 @@ summary <- tabPanel(
     tags$header(
       tags$h1(id = "bar_header", "Main Takeaways")
     ),
+    tags$hr(),
     tags$main(
       tags$section(
         tags$h2("Personal Freedom (Identity):"),
