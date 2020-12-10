@@ -210,14 +210,14 @@ summary <- tabPanel(
     ),
     tags$main(
       tags$section(
-        tags$h2("something for the bar chart (placeholder):"),
+        tags$h2("Personal Freedom (By Gender):"),
         tags$p(
         "Comparing personal freedom with women
         freedom in different regions, the data indicates higher women freedom
         in Caucasus & Central Asia, Oceania and North America but those same
         regions have lower personal freedom.")),
       tags$section(
-        tags$h2("somthing for the map (placeholder):"),
+        tags$h2("human freedom index (HFI):"),
         tags$p(
         "For year 2017, the country with the highest human
         freedom index (HFI) was New Zealand and the country with the lowest HFI
@@ -227,7 +227,7 @@ summary <- tabPanel(
         South Asia, Sub-Saharan Africa, while Middle East & North Africa ranks
         the lowest.")),
       tags$section(
-        tags$h2("something for the third interactive plot (placeholder):"),
+        tags$h2("Personal Freedom and Economic freedom:"),
         tags$p(
         "Economic freedom sometimes is a vital factor of evaluating human freedom
         in different regions. It is expected that the data implies an almost the
