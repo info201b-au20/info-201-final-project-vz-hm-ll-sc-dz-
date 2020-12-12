@@ -41,11 +41,11 @@ img {
 
 section p {
   text-align: center;
-  font-size: 15px;
+  margin: 10px;
 }
 
-p {
-  margin: 10px;
+div, a, section p {
+  font-size: 15.5px;
 }
 
 #bar_header {
